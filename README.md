@@ -1,2 +1,2 @@
 # rtfm
-Markdown sources for do-site http://rtfm.emc/
+Markdown sources for doc-site http://rtfm.emc/
