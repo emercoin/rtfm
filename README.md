@@ -1,2 +1,2 @@
 # rtfm
-Markdown sources for doc-site http://rtfm.emc/
+Asciidoc sources for doc-site http://rtfm.emc/
