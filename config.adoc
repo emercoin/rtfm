@@ -1,0 +1,18 @@
+:favicon: images/favicon-32x32.png
+:toc:
+:toc-title: Содержание
+:toclevels: 4
+:numbered: yes
+:hide-uri-scheme:
+:stylesdir: ./css
+:stylesheet: dark.css
+// :source-highlighter: rouge
+// :rouge-style: base16.solarized.dark
+// :source-highlighter: rouge
+// :rouge-style: github.dark
+:imagesdir: images
+// :stylesheet: /home/shedar/Documents/Emercoin-Docs/asciidoctor.css
+// :warning-caption: 💡
+
+
+
