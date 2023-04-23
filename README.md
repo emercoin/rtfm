@@ -5,3 +5,5 @@ Compile to HTML:
 ```
 asciidoctor --backend=html5 -o ./emercoin.html ./emercoin.adoc
 ```
+
+AsciiDoc Language Documentation [here](https://docs.asciidoctor.org/asciidoc/latest/)
