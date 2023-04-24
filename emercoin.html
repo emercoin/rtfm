@@ -208,6 +208,15 @@ a {
 <li><a href="#_emertts_possible_dead">3.9. EmerTTS (Possible Dead)</a></li>
 <li><a href="#_emermagnet">3.10. EmerMagnet</a></li>
 <li><a href="#_filevalidator">3.11. FileValidator</a></li>
+<li><a href="#_как_это_работает">3.12. Как это работает</a>
+<ul class="sectlevel3">
+<li><a href="#_издатель">3.12.1. Издатель</a></li>
+<li><a href="#_валидатор">3.12.2. Валидатор</a></li>
+<li><a href="#_пользователь">3.12.3. Пользователь</a></li>
+<li><a href="#_как_этим_пользоваться">3.12.4. Как этим пользоваться</a></li>
+<li><a href="#_использование_программы">3.12.5. Использование программы</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_randpay">4. RandPay</a>
@@ -2608,7 +2617,376 @@ enumtollfree=@enum:tollfree</pre>
 <div class="sect2">
 <h3 id="_filevalidator">3.11. FileValidator</h3>
 <div class="paragraph">
-<p>pass</p>
+<p>FV&#8201;&#8212;&#8201;сервис проверки целостности файлов, полученных из недостоверных источников.</p>
+</div>
+<div class="paragraph">
+<p>Файл (программа или документ) подписывается разработчиком или издателем, и цифровые подписи файла публикуются в блокчейн.</p>
+</div>
+<div class="paragraph">
+<p>Любой пользователь может проверить файл, полученный из торрентов или подобных источников на предмет целостности и неизменности. Проверка возможна даже в том случае, когда разработчик прекратил  поддержку, или вообще вышел из бизнеса. Это весьма актуально для драйверов устаревших устройств, которые можно найти только в архивах сомнительных сайтов.</p>
+</div>
+<div class="paragraph">
+<p>Также FV-записи в блокчейне Emer имеют достоверные метки времени, и можно узнать, кто и когда опубликовал ту или иную подпись, а также когда созданы записи подписантов.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_как_это_работает">3.12. Как это работает</h3>
+<div class="paragraph">
+<p>Рассмотрим работу системы на реальном примере. Пусть есть издатель Emercoin, который сам себе валидатор (простейший случай). Издатель выпустил бинарный файл-инсталлятор кошелька Emercoin для Windows, имя файла: emercoin-0.7.10-win64-setup.exe.</p>
+</div>
+<div class="sect3">
+<h4 id="_издатель">3.12.1. Издатель</h4>
+<div class="paragraph">
+<p>Издатель Emercoin желает воспользоваться предлагаемой системой FV для того, чтобы пользователи могли проверить полученный бинарный файл и убедиться, что они получили именно то, что распространяет издатель.</p>
+</div>
+<div class="paragraph">
+<p>Для этого он хеширует файл алгоритмом sha256 (система предполагает смену алгоритма при необходимости), и получает хеш файла:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>169dc5dd293cd82f84737055403ae87a62008072d785376f56f6d309288a092a</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Издатель на основе хеш-суммы создаёт поисковое имя, которое будет выступать ключом в Emercoin NVS:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>fv:sha256=169dc5dd293cd82f84737055403ae87a62008072d785376f56f6d309288a092a</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Здесь:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>fv:</strong> Префикс сервиса, <strong>File Validator</strong></p>
+</li>
+<li>
+<p><strong>sha256:</strong> алгоритм хеширования (дефолтный <strong>sha256</strong>, но возможна в будущем замена на другие алгоритмы)</p>
+</li>
+<li>
+<p><strong>hex-строка:</strong> хеш-сумма файла.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>После этого, издатель передаёт файл для проверки и подписи валидаторам, которых выбирает сам. В нашем примере, сам разработчик и выступает в качестве валидатора.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_валидатор">3.12.2. Валидатор</h4>
+<div class="paragraph">
+<p>Валидатор имеет в Emercoin NVS уникальное имя, с которым связан Emercoin address. Имя имеет префикс сервиса <strong>val:</strong>, и может содержать только латинские символы нижнего регистра, а также точку и минус. То есть разрешённое множество символов: <strong>[a-z.-]</strong>. Пробелы, табуляции, спецсимволы или символы национальных кодировок также запрещены. Это ограничение призвано заблокировать манипуляции, позволяющие создавать внешне похожие имена валидаторов и от их имени подписывать всякое. Типичный пример такой манипуляции&#8201;&#8212;&#8201;внешне похожие, но отличающиеся имена: <strong>paypal - paypaI – paypa1</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Например, имя валидатора olegarch&#8201;&#8212;&#8201;корректное, а имя o1egarch&#8201;&#8212;&#8201;некорректное, так как содержит цифру 1.</p>
+</div>
+<div class="paragraph">
+<p>В нашем примере, валидатором выступает Emercoin, владеющий NVS-именем: <strong>val:emercoin</strong> связанным с адресом:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>EcXrMDf8YyLMFk6RCnkAnPm9fmDBfu5eQX</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>На основании полученного файла, валидатор создаёт поисковое имя аналогично тому, как это сделал издатель. После этого издатель создаёт строку для подписи:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>emercoin|100|fv:sha256=169dc5dd293cd82f84737055403ae87a62008072d785376f56f6d309288a092a</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Здесь:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>emercoin:</strong> NVS-имя валидатора.</p>
+</li>
+<li>
+<p><strong>100:</strong> Уровень доверия (зарезервировано для дальнейшего использования).</p>
+</li>
+<li>
+<p><strong>fv..f6:</strong> поисковое имя, аналогичное таковому у издателя.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Эту строку валидатор подписывает командой <strong>signmessage</strong> в своём кошельке адресом:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>EcXrMDf8YyLMFk6RCnkAnPm9fmDBfu5eQX</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>связанным с именем валидатора <strong>val:emercoin:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>signmessage  EcXrMDf8YyLMFk6RCnkAnPm9fmDBfu5eQX em..f6</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Полученную цифровую подпись:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>IH0yysgQpP1xIjRcJPrWaDVrl9B35BfrNcgOdwNm1gjFeE2zpKZZooSd55LydWlPnnlfnLiI+2Q1VUzzsD/8irE=</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>валидатор передаёт издателю.</p>
+</div>
+<div class="paragraph">
+<p>Издатель, получив подпись от валидатора, создаёт и публикует в блокчейне NVS-запись, где в качестве имени выступает поисковый ключ, а <strong>value</strong> содержит строку с подписью:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>SIG=emercoin|100|IH0yysgQpP1xIjRcJPrWaDVrl9B35BfrNcgOdwNm1gjFeE2zpKZZooSd55LydWlPnnlfnLiI+2Q1VUzzsD/8irE=</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Здесь:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>SIG=:</strong> Префикс, специфицирующий цифровую подпись.</p>
+</li>
+<li>
+<p><strong>emercoin:</strong> NVS-имя валидатора.</p>
+</li>
+<li>
+<p><strong>100:</strong> Уровень доверия (зарезервировано для дальнейшего использования).</p>
+</li>
+<li>
+<p><strong>IH..E=:</strong> цифровая подпись валидатора.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Value</strong> может содержать несколько строк-подписей и другие строки, содержащие произвольную информацию о подписываемом файле. Например, реальная NVS-запись о нашем файле имеет структуру:</p>
+</div>
+<div class="paragraph">
+<p>Name:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>fv:sha256=169dc5dd293cd82f84737055403ae87a62008072d785376f56f6d309288a092a</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Value:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Emercoin core wallet, full node
+File: emercoin-0.7.10-win64-setup.exe
+Download: https://emercoin.com/en/for-coinholders#download
+SIG=emercoin|100|IH0yysgQpP1xIjRcJPrWaDVrl9B35BfrNcgOdwNm1gjFeE2zpKZZooSd55LydWlPnnlfnLiI+2Q1VUzzsD/8irE=
+SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4UdejEgpH5em4Gi/ZfoZFU69Owk=</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Здесь мы видим, что информация о файле содержит подписи от двух валидаторов&#8201;&#8212;&#8201;<strong>emercoin</strong> и <strong>olegarch</strong>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_пользователь">3.12.3. Пользователь</h4>
+<div class="paragraph">
+<p>Пользователь, получив файл из недоверенного источника, желает убедиться, что данный файл – именно тот, который опубликовал издатель. Для этого он предпринимает следующие действия.</p>
+</div>
+<div class="paragraph">
+<p>Хеширует файл, и получает его хеш sha256, например командой:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sha256sum emercoin-0.7.10-win64-setup.exe
+169dc5dd293cd82f84737055403ae87a62008072d785376f56f6d309288a092a  emercoin-0.7.10-win64-setup.exe</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>На основании полученной хеш-суммы пользователь формирует поисковое имя аналогично тому, как это делал издатель (см выше):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>fv:sha256=169dc5dd293cd82f84737055403ae87a62008072d785376f56f6d309288a092a</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Извлекает из Emercoin NVS информацию о полученном файле, посредством команды name_show:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>name_show fv:sha256=169dc5dd293cd82f84737055403ae87a62008072d785376f56f6d309288a092a
+
+{
+"name": "fv:sha256=169dc5dd293cd82f84737055403ae87a62008072d785376f56f6d309288a092a",
+"value": "Emercoin core wallet, full node\nFile: emercoin-0.7.10-win64-setup.exe\nDownload: https://emercoin.com/en/for-coinholders#download\nSIG=emercoin|100|IH0yysgQpP1xIjRcJPrWaDVrl9B35BfrNcgOdwNm1gjFeE2zpKZZooSd55LydWlPnnlfnLiI+2Q1VUzzsD/8irE=\nSIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4UdejEgpH5em4Gi/ZfoZFU69Owk=",
+"txid": "a22fa9b5ac1725d30e6e6dc9bb2038b0a0afbe362031eb8b9d9a4392e0cc46ff",
+"address": "EfsrojhfLGf6LPYRFytiaGRVwYmQ9KsWN5",
+"expires_in": 957918,
+"expires_at": 1391644,
+"time": 1598137455
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Из полученного результата, извлекает строки с подписями:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>SIG=emercoin|100|IH0yysgQpP1xIjRcJPrWaDVrl9B35BfrNcgOdwNm1gjFeE2zpKZZooSd55LydWlPnnlfnLiI+2Q1VUzzsD/8irE=
+SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4UdejEgpH5em4Gi/ZfoZFU69Owk=</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Пользователь верифицирует все или выборочно некоторые подписи следующим образом:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Из строки извлекает имя валидатора, в нашем примере emercoin.</p>
+</li>
+<li>
+<p>Посредством запроса <strong>name_show</strong> на <strong>val:emercoin</strong>, получает EMC-адрес, связанный с этим именем:</p>
+<div class="listingblock">
+<div class="content">
+<pre>EcXrMDf8YyLMFk6RCnkAnPm9fmDBfu5eQX.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Извлекает из строки подпись валидатора <strong>IH..e=</strong></p>
+</li>
+<li>
+<p>Формирует строку для подписи аналогично тому, как это делал валидатор:</p>
+<div class="listingblock">
+<div class="content">
+<pre>emercoin|100|fv:sha256=169dc5dd293cd82f84737055403ae87a62008072d785376f56f6d309288a092a</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Запросом <strong>verifymessage</strong> пользователь проверяет достоверность подписи:</p>
+<div class="listingblock">
+<div class="content">
+<pre>verifymessage адрес подпись строка_для_подписи</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>В нашем примере – это:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>verifymessage  EcXrMDf8YyLMFk6RCnkAnPm9fmDBfu5eQX IH0yysgQpP1xIjRcJPrWaDVrl9B35BfrNcgOdwNm1gjFeE2zpKZZooSd55LydWlPnnlfnLiI+2Q1VUzzsD/8irE= emercoin|100|fv:sha256=169dc5dd293cd82f84737055403ae87a62008072d785376f56f6d309288a092a</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Получив результат проверки, пользователь принимает решение, что делать с проверяемым файлом.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_как_этим_пользоваться">3.12.4. Как этим пользоваться</h4>
+<div class="paragraph">
+<p>Выше, в разделе “как это работает”, был предоставлен пошаговый алгоритм как генерации и публикации подписей, так и проверки файлов. Понятно, что вручную все эти операции делать сложно, особенно для конечного пользователя. Поэтому для практического применения мы написали программу fv.php, которую можно скачать из репозитория Emercoin <a href="https://github.com/emercoin/FV">здесь</a>.</p>
+</div>
+<div class="paragraph">
+<p>Эта программа также является “референтной имплементацией” рассмотренных выше алгоритмов, и может быть использована в качестве практического примера для написания аналогичной программы или для интеграции системы <strong>FV</strong> в менеджеры пакетов или другие программы и сервисы.</p>
+</div>
+<div class="paragraph">
+<p>Программа изначально написана для Linux/FreeBSD, но может быть запущена и из командной строки Windows, например в соответствии с <a href="https://stackoverflow.com/questions/12870880/run-php-file-in-windows-command-prompt-cmd">инструкцией</a>.</p>
+</div>
+<div class="paragraph">
+<p>После скачивания, в программе необходимо отредактировать URL для подключения к локальному кошельку, установив там актуальные параметры username/password/port:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$emcCONNECT = "http://user:secret_pass@localhost:6662";</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Также, возможно, для Windows надо удалить первую строку файла, специфицирующую интерпретатор:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>#!/usr/bin/php</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_использование_программы">3.12.5. Использование программы</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Тестирование</dt>
+<dd>
+<p>Вначале, надо убедиться, что программа запускается без ошибок и корректно подсоединяется к кошельку Emercoin:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ ./fv.php -getinfo</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>В случае, если установка актуальных параметров произведена верно, то программа напишет результат getinfo, и можно приступать к дальнейшей работе.</p>
+</div>
+</dd>
+<dt class="hdlist1">Проверка файла</dt>
+<dd>
+<p>Для этого надо запустить программу с единственным параметром - именем файла, и она проведёт весь процесс валидации.</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ ./fv.php ./emercoin-0.7.10-win64-setup.exe
+
+File info from NVS:
+    Emercoin core wallet, full node
+    File: emercoin-0.7.10-win64-setup.exe
+    Download: https://emercoin.com/en/for-coinholders#download
+
+Validation results:
+    emercoin/EMERCOIN [Emercoin File Validator] created 2020-08-20 05:08; Signature PASSED
+    olegarch/OLEGARCH [Oleg Khovayko FV] created 2020-08-20 02:08; Signature PASSED</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>В примере выше программа сообщает время создания NVS-записи для данного файла (слишком свежие записи для старых файлов могут вызвать подозрение), а также результаты проверок подписей. Здесь видно, что для данного файла подписи от обоих валидаторов проверки прошли успешно, и файл не содержит неавторизированных изменений.</p>
+</div>
+</dd>
+<dt class="hdlist1">Генерация подписи валидатора</dt>
+<dd>
+<p>Для генерации подписи, Ваш кошелёк должен содержать NVS-запись валидатора, и быть полностью разблокированным.</p>
+<div class="paragraph">
+<p>Для генерации подписи, необходимо указать программе имя файла, и строку, содержащую имя валидатора и уровень доверия (насколько валидатор доверяет издателю файла). Второй параметр надо взять в кавычки, иначе интерпретатор командной строки будет интерпретировать символ “|” как shell pipe.</p>
+</div>
+<div class="paragraph">
+<p>Пример запуска и результат:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ ./fv.php ./emercoin-0.7.10-win64-setup.exe 'olegarch|100'
+
+FV signature for upload to NVS FV-record:
+
+NVS Key:
+fv:sha256=169dc5dd293cd82f84737055403ae87a62008072d785376f56f6d309288a092a
+
+Signature line:
+SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4UdejEgpH5em4Gi/ZfoZFU69Owk=</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>В качестве результата, программа возвращает NVS-key и подпись для передачи издателю. Издатель может загрузить эти параметры в NVS, или же скомбинировать в value подписи от нескольких издателей.</p>
+</div>
+</dd>
+</dl>
+</div>
 </div>
 </div>
 </div>
@@ -3142,7 +3520,7 @@ _443._tcp.rtfm.emc. IN TLSA 3 1 1 aca2d0e69e13223580a9eb4b2a4435c5463e81db8cfc2f
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-23 20:22:21 +0300
+Last updated 2023-04-24 11:55:39 +0300
 </div>
 </div>
 </body>
