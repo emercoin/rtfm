@@ -1,0 +1,30 @@
+Бинарные версии для вашей платформы можно скачать {emercoin-github}[здесь].
+
+
+Arch Linux:
+----
+yay -S emercoin-bin
+----
+
+
+=== Сборка из исходных кодов
+
+[quote, Кто то из разработчиков]
+____
+The Emercoin team happy to inform: we have written and released version 0.7.11, see the binaries and release notes on Github: https://github.com/emercoin/emercoin/releases/tag/v0.7.11emc
+
+However, you can get the binaries for PC and Linux from the Github link above. Please, upgrade the Emercoin node on your system, it contains several important (but not critical) bugfixes.
+
+Please inform us when you will upgrade your system.
+
+If you prefer to build the program yourself, do it by following way:
+____
+
+----
+git clone git@github.com:emercoin/emercoin.git
+cd emercoin/
+git checkout tags/v0.7.11emc
+./autogen.sh
+./configure --disable-dependency-tracking --disable-tests --disable-util-tx --disable-gui-tests --enable-bip70 --disable-hardening --disable-debug
+make -j 4
+----

@@ -1,0 +1,252 @@
+=== Статьи/Видео Oleg Khovayko
+
+==== RU
+https://dzen.ru/olegarch
+
+https://www.youtube.com/watch?v=l22kA2mACvE
+
+https://www.youtube.com/watch?v=JxwGjMGB5sw
+
+https://www.osp.ru/os/2016/04/13050988
+
+==== EN
+
+https://cryptogeek.info/en/blog/emercoin-interview
+
+
+=== RU
+
+Криптоскам: 3 категории криптопроектов, которые заставят вас усомниться в децентрализации и начать обходить их стороной. Примеры и контрпримеры::
+https://telegra.ph/aware-cryptoscams-11-18
+
+==== Статьи medium.com
+
+Используй Блокчейн Emercoin, это просто!::
+https://medium.com/test-pubs/используй-блокчейн-emercoin-это-просто-dcce60ecb9e2
+
+emerDNS. Платформа для интернета без цензуры::
+https://medium.com/@emer.rutech/emerdns-платформа-для-интернета-без-цензуры-fcb1c6bea64c
+
+Блокчейн против блокировок::
+https://medium.com/@emer.rutech/блокчейн-против-блокировок-a2de772e788d
+
+Блокчейн в образовании::
+https://medium.com/@emer.rutech/интервью-дайджест-3-2019-283dd4fb05b9
+
+Randpay::
+https://medium.com/test-pubs/используй-блокчейн-emercoin-это-просто-dcce60ecb9e2
+
+Emercoin — 10 вопросов и 10 ответов::
+https://medium.com/@emer.rutech/emercoin-10-вопросов-и-10-ответов-b578dd0529e9
+
+Eggs Datacenter: как Emercoin позволил реализовать идею распределённого дата-центра на блокчейне::
+https://medium.com/test-pubs/используй-блокчейн-emercoin-это-просто-dcce60ecb9e2
+
+Новые плагины Blockchain DNS для интернет браузеров::
+https://medium.com/@emer.rutech/новые-плагины-blockchain-dns-для-интернет-браузеров-5f99e454589f
+
+Эмеркоин сделал VoIP телефонию бесплатной с помощью ENUMER!::
+https://medium.com/@emer.rutech/эмеркоин-сделал-voip-телефонию-бесплатной-с-помощью-enumer-1e9e3f64187f
+
+Разворачиваем Emercoin testnet::
+https://medium.com/@emer.rutech/разворачиваем-emercoin-testnet-f31fa4243762
+
+EmerDNS — альтернатива DNSSEC::
+https://medium.com/@emer.rutech/emerdns-альтернатива-dnssec-84fd2990af3a
+
+Используй Блокчейн Emercoin, это просто!::
+https://medium.com/test-pubs/используй-блокчейн-emercoin-это-просто-dcce60ecb9e2
+
+Вы не поверите, но на Блокчейне можно вести блог!::
+https://medium.com/@emer.rutech/вы-не-поверите-но-на-блокчейне-можно-вести-блог-c7ba9f3b5820
+
+
+
+
+==== Статьи cryptor.net
+
+Etherium vs EmerCoin. О разнице подходов в использовании Блокчейна::
+https://cryptor.net/kriptovalyuty/etherium-vs-emercoin-o-raznice-podhodov-v-ispolzovanii-blokcheyna
+
+Корпорация IT-Farm инвестирует в блокчейн Emercoin::
+https://cryptor.net/news/korporaciya-it-farm-investiruet-v-blokcheyn-emercoin-577
+
+Обзор криптовалюты Emercoin::
+https://cryptor.net/kriptovalyuty/obzor-kriptovalyuty-emercoin
+
+Собираем кошелек EmerCoin v.05 на Raspberry Pi::
+https://cryptor.net/tutorial/sobiraem-koshelek-emercoin-v05-na-raspberry-pi
+
+Децентрализованный альтернативный DNS на основе криптовалюты EmerCoin::
+https://cryptor.net/kriptovalyuty/decentralizovannyy-alternativnyy-dns-na-osnove-kriptovalyuty-emercoin
+
+Bitfury Group и First Block Capital инвестируют в Emercoin для повышения безопасности и гибкости блокчейн-проектов::
+https://cryptor.net/news/bitfury-group-i-first-block-capital-investiruyut-v-emercoin-dlya-povysheniya-bezopasnosti-i
+
+Куда движется EmerCoin? Интервью с руководителем проекта - Евгением Шумиловым::
+https://cryptor.net/persona-grata/kuda-dvizhetsya-emercoin-intervyu-s-rukovoditelem-proekta-evgeniem-shumilovym
+
+Emercoin продолжает налаживать сотрудничество с мировым блокчейн-сообществом::
+https://cryptor.net/news/emercoin-prodolzhaet-nalazhivat-sotrudnichestvo-s-mirovym-blokcheyn-soobshchestvom-1583
+
+Биржа OKEx добавила в листинг Emercoin, придав толчок развитию криптовалюты::
+https://cryptor.net/news/birzha-okex-dobavila-v-listing-emercoin-pridav-tolchok-razvitiyu-kriptovalyuty-423
+
+Как обновить EmerCoin кошелек на Raspberry Pi::
+https://cryptor.net/tutorial/kak-obnovit-emercoin-koshelek-na-raspberry-pi
+
+Фонд XTC Unicorn проинвестировал в Emercoin Blockchain::
+https://cryptor.net/news/fond-xtc-unicorn-proinvestiroval-v-emercoin-blockchain-444
+
+Децентрализованная рекламная сеть emcLNX. Покупаем и продаем трафик за EmerCoin::
+https://cryptor.net/tutorial/decentralizovannaya-reklamnaya-set-emclnx-pokupaem-i-prodaem-trafik-za-emercoin
+
+Как почистить блокчейн EmerCoin на Mac Os X::
+https://cryptor.net/tutorial/kak-pochistit-blokcheyn-emercoin-na-mac-os-x
+
+EmerCoin изнутри: интервью с ведущим разработчиком криптовалюты::
+https://cryptor.net/persona-grata/emercoin-iznutri-intervyu-s-vedushchim-razrabotchikom-kriptovalyuty
+
+Собственная инфраструктура открытых ключей на базе EmerCoin emcSSH::
+https://cryptor.net/tutorial/sobstvennaya-infrastruktura-otkrytyh-klyuchey-na-baze-emercoin-emcssh
+
+Под капотом Emercoin::
+https://cryptor.net/kriptovalyuty/pod-kapotom-emercoin
+
+Под капотом Emercoin. Часть 2. Децентрализованная нецензурируемая система доменных имён::
+https://cryptor.net/kriptovalyuty/pod-kapotom-emercoin-chast-2-decentralizovannaya-necenzuriruemaya-sistema-domennyh
+
+Под капотом Emercoin. Часть 3. emcSSH. Инфраструктура публичных ключей всемирного масштаба::
+https://cryptor.net/kriptovalyuty/pod-kapotom-emercoin-chast-3-emcssh-infrastruktura-publichnyh-klyuchey-vsemirnogo
+
+[#emerssl-article]
+Под капотом Emercoin. Часть 4. emcSSL. Децентрализованная беспарольная система безопасности::
+https://cryptor.net/kriptovalyuty/pod-kapotom-emercoin-chast-4-emcssl-decentralizovannaya-besparolnaya-sistema
+
+Система идентификации пользователей на основе криптовалюты EmerCoin::
+https://cryptor.net/kriptovalyuty/sistema-identifikacii-polzovateley-na-osnove-kriptovalyuty-emercoin
+
+Создаем ssl сертификат emcssl для авторизации на сайтах::
+https://cryptor.net/tutorial/sozdaem-ssl-sertifikat-emcssl-dlya-avtorizacii-na-saytah
+
+Российские разработчики из Bitfury и Emercoin создадут блокчейн-платформу для Госдепа США по заказу Coca-Cola::
+https://cryptor.net/news/rossiyskie-razrabotchiki-iz-bitfury-i-emercoin-sozdadut-blokcheyn-platformu-dlya-gosdepa-ssha
+
+EMCLNX – Пиринговая сеть обмена рекламными ссылками::
+https://cryptor.net/kriptovalyuty/emclnx-piringovaya-set-obmena-reklamnymi-ssylkami
+
+Децентрализованная технология блокчейна против ICANN: возможен ли конфликт?::
+https://cryptor.net/obshchestvo/decentralizovannaya-tehnologiya-blokcheyna-protiv-icann-vozmozhen-li-konflikt
+
+Авторизация с помощью клиентских emcSSL сертификатов. Часть 1. Готовим сервер::
+https://cryptor.net/tutorial/avtorizaciya-s-pomoshchyu-klientskih-emcssl-sertifikatov-chast-1-gotovim-server
+
+Система доменных имен, которые невозможно разделегировать::
+https://cryptor.net/obshchestvo/sistema-domennyh-imen-kotorye-nevozmozhno-razdelegirovat
+
+Блокчейн и сельское хозяйство. Интервью с первым в мире блокчейн-фермером::
+https://cryptor.net/persona-grata/blokcheyn-i-selskoe-hozyaystvo-intervyu-s-pervym-v-mire-blokcheyn-fermerom
+
+Подключаем сайт на WordPress к системе Authorizer::
+https://cryptor.net/tutorial/podklyuchaem-sayt-na-wordpress-k-sisteme-authorizer
+
+Генерация emcSSL сертификата online::
+https://cryptor.net/tutorial/generaciya-emcssl-sertifikata-online
+
+
+==== Статьи habr
+Лекции по криптографии, блокчейну и вообще::
+https://habr.com/ru/companies/emercoin/articles/339204/
+
+EMC DPO: как защитить свои товары от подделок::
+https://habr.com/ru/post/322696/
+
+Погружение в технологию блокчейн: Секреты EmerCoin::
+https://habr.com/ru/companies/microsoft/articles/311690/
+
+Emercoin vs Ethereum и сравнение приватных и публичных блокчейнов::
+https://habr.com/ru/companies/hashflare/articles/370193/
+
+Microsoft, ООН и EmerCoin: использование технологии блокчейн в реальных проектах::
+https://habr.com/ru/companies/microsoft/articles/310812/
+
+Равертывание Emercoin blockchain с веб-кошельком на RedHat/CentOS 7 и Ubuntu 16.04::
+https://habr.com/ru/articles/304100/
+
+«Авторайзер»: беспарольная децентрализованная авторизация через OAuth 2.0 на блокчейне Emercoin::
+https://habr.com/ru/companies/hashflare/articles/370225/
+
+Сервисы Emercoin будут доступны на Microsoft Azure::
+https://habr.com/ru/companies/hashflare/articles/389249/
+
+Eggs Datacenter: как Emercoin позволил реализовать идею распределённого дата-центра на блокчейне::
+https://habr.com/ru/companies/emercoin/articles/338572/
+
+Свободен ото всех оков: Emercoin версии 6.2 стал полностью децентрализованным::
+https://habr.com/ru/companies/emercoin/articles/327988/
+
+Стоимость Emercoin достигла исторического максимума::
+https://habr.com/ru/companies/hashflare/articles/403933/
+
+Цифровой нотариус на блокчейне: Emercoin DPO Antifake::
+https://habr.com/ru/companies/hashflare/articles/402151/
+
+EMCSSL – Система идентификации пользователей WWW на основе подсистемы NVS криптовалюты EmerCoin и децентрализованных клиентских SSL-сертификатов::
+https://habr.com/ru/articles/257605/
+
+Разворачиваем Emercoin testnet и получаем много бесплатных монет::
+https://habr.com/ru/companies/emercoin/articles/335338/
+
+Emercoin снизит комиссии на транзакции в 100 раз::
+https://habr.com/ru/companies/emercoin/articles/335630/
+
+Вебкошелек Emercoin One — безопасен настолько, насколько возможно::
+https://habr.com/ru/companies/emercoin/articles/341970/
+
+Как начать работать с блокчейном Emer::
+https://habr.com/ru/companies/emercoin/articles/329632/
+
+EMC DPO: как защитить свои товары от подделок::
+https://habr.com/ru/articles/322696/
+
+Развертывание сервера ElectrumX::
+https://habr.com/ru/articles/345222/
+
+Погружение в технологию блокчейн: Децентрализованная нецензурированная система доменных имён::
+https://habr.com/ru/companies/microsoft/articles/314368/
+
+Криптовалюта Эмеркоин: монета как технологичная платформа для различных сервисов::
+https://habr.com/ru/companies/hashflare/articles/387773/
+
+Погружение в технологию блокчейн: Децентрализованная беспарольная система безопасности::
+https://habr.com/ru/companies/microsoft/articles/316864/
+
+Погружение в технологию блокчейн: Инфраструктура публичных ключей всемирного масштаба::
+https://habr.com/ru/companies/microsoft/articles/316326/
+
+Authorizer: децентрализованная авторизация emcSSL заработает с oAuth 2.0::
+https://habr.com/ru/companies/hashflare/articles/373025/
+
+Emcssh – простое управление цифровыми ключами::
+https://habr.com/ru/companies/hashflare/articles/385099/
+
+«Эмеркоин» подключился к F2Pool::
+https://habr.com/ru/companies/hashflare/articles/403845/
+
+==== Other
+
+Emercoin — инфраструктурные сервисы на блокчейне::
+https://bits.media/emercoin-infrastrukturnye-servisy-na-blokcheyne/
+
+=== EN
+
+Emercoin: The cryptocurrency caught between the old school and modern age::
+https://www.coin-report.net/en/emercoin/
+
+10 most common questions (and answers) about Emercoin::
+https://emercoin.com/en/news/10-most-common-questions-and-answers-about-emercoin/
+
+Emercoin: Setting the New Standard for Top Blockchains::
+https://news.bitcoin.com/emercoin-setting-the-new-standard-for-top-blockchains/
+
+
