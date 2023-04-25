@@ -128,14 +128,17 @@ a {
 <div id="toc" class="toc">
 <div id="toctitle">Содержание</div>
 <ul class="sectlevel1">
-<li><a href="#_installation">1. Installation</a></li>
-<li><a href="#_сборка_из_исходных_кодов">2. Сборка из исходных кодов</a></li>
-<li><a href="#_nvs">3. NVS</a>
+<li><a href="#_installation">1. Installation</a>
 <ul class="sectlevel2">
-<li><a href="#_emerdns">3.1. EmerDNS</a>
+<li><a href="#_сборка_из_исходных_кодов">1.1. Сборка из исходных кодов</a></li>
+</ul>
+</li>
+<li><a href="#_nvs_и_его_подсистемы">2. NVS и его подсистемы</a>
+<ul class="sectlevel2">
+<li><a href="#_emerdns">2.1. EmerDNS</a>
 <ul class="sectlevel3">
-<li><a href="#_поддерживаемые_зоны">3.1.1. Поддерживаемые зоны</a></li>
-<li><a href="#_доступ_к_зонам_emerdns">3.1.2. Доступ к зонам EmerDNS</a>
+<li><a href="#_поддерживаемые_зоны">2.1.1. Поддерживаемые зоны</a></li>
+<li><a href="#_доступ_к_зонам_emerdns">2.1.2. Доступ к зонам EmerDNS</a>
 <ul class="sectlevel4">
 <li><a href="#_расширения_браузера">Расширения браузера</a></li>
 <li><a href="#_opennic">OpenNIC</a></li>
@@ -145,20 +148,20 @@ a {
 <li><a href="#_частные_dns_сервера">Частные DNS сервера</a></li>
 </ul>
 </li>
-<li><a href="#_синтаксис_записей_dns">3.1.3. Синтаксис записей DNS</a>
+<li><a href="#_синтаксис_записей_dns">2.1.3. Синтаксис записей DNS</a>
 <ul class="sectlevel4">
 <li><a href="#_требования_к_именованию">Требования к именованию</a></li>
 <li><a href="#_интернационализированные_доменные_имена">Интернационализированные доменные имена</a></li>
 <li><a href="#_поддомены">Поддомены</a></li>
 </ul>
 </li>
-<li><a href="#_создание_записей_dns">3.1.4. Создание записей DNS</a>
+<li><a href="#_создание_записей_dns">2.1.4. Создание записей DNS</a>
 <ul class="sectlevel4">
 <li><a href="#_создание_записей_через_cli">Создание записей через CLI</a></li>
 <li><a href="#_создание_записей_через_gui">Создание записей через GUI</a></li>
 </ul>
 </li>
-<li><a href="#_интеграция_в_обычное_дерево_dns">3.1.5. Интеграция в обычное дерево DNS</a>
+<li><a href="#_интеграция_в_обычное_дерево_dns">2.1.5. Интеграция в обычное дерево DNS</a>
 <ul class="sectlevel4">
 <li><a href="#_unbound_dns_server">Unbound DNS Server</a></li>
 <li><a href="#_обычный_pc_компьютер_acrylic_dns_прокси">Обычный PC компьютер, Acrylic DNS-прокси</a></li>
@@ -168,31 +171,31 @@ a {
 <li><a href="#_общедоступный_интернет_прямой_шлюз">Общедоступный Интернет, прямой шлюз</a></li>
 </ul>
 </li>
-<li><a href="#_виртуальные_хосты_vhosts">3.1.6. Виртуальные хосты (vhosts)</a></li>
-<li><a href="#_получение_ssl_сертификатов_с_postmet">3.1.7. Получение SSL сертификатов с Postmet</a></li>
+<li><a href="#_виртуальные_хосты_vhosts">2.1.6. Виртуальные хосты (vhosts)</a></li>
+<li><a href="#_получение_ssl_сертификатов_с_postmet">2.1.7. Получение SSL сертификатов с Postmet</a></li>
 </ul>
 </li>
-<li><a href="#_emerssl">3.2. EmerSSL</a>
+<li><a href="#_emerssl">2.2. EmerSSL</a>
 <ul class="sectlevel3">
-<li><a href="#_создание_сертификата_emerssl">3.2.1. Создание сертификата EmerSSL</a></li>
-<li><a href="#_infocard">3.2.2. InfoCard</a>
+<li><a href="#_создание_сертификата_emerssl">2.2.1. Создание сертификата EmerSSL</a></li>
+<li><a href="#_infocard">2.2.2. InfoCard</a>
 <ul class="sectlevel4">
 <li><a href="#_создание_infocard">Создание InfoCard</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_emerssh">3.3. EmerSSH</a>
+<li><a href="#_emerssh">2.3. EmerSSH</a>
 <ul class="sectlevel3">
-<li><a href="#_установка">3.3.1. Установка</a></li>
-<li><a href="#_настройка_emerssh">3.3.2. Настройка EmerSSH</a></li>
+<li><a href="#_установка">2.3.1. Установка</a></li>
+<li><a href="#_настройка_emerssh">2.3.2. Настройка EmerSSH</a></li>
 </ul>
 </li>
-<li><a href="#_emerdpo">3.4. EmerDPO</a></li>
-<li><a href="#_enumer">3.5. ENUMER</a>
+<li><a href="#_emerdpo">2.4. EmerDPO</a></li>
+<li><a href="#_enumer">2.5. ENUMER</a>
 <ul class="sectlevel3">
-<li><a href="#_описание">3.5.1. Описание</a></li>
-<li><a href="#_enum">3.5.2. ENUM</a>
+<li><a href="#_описание">2.5.1. Описание</a></li>
+<li><a href="#_enum">2.5.2. ENUM</a>
 <ul class="sectlevel4">
 <li><a href="#_преимущества_enum">Преимущества ENUM</a></li>
 <li><a href="#_проблемы_текущих_реализаций_enum">Проблемы текущих реализаций ENUM</a></li>
@@ -202,50 +205,50 @@ a {
 </li>
 </ul>
 </li>
-<li><a href="#_emerlnx_dead">3.6. EmerLNX (Dead)</a></li>
-<li><a href="#_emertts_possible_dead">3.7. EmerTTS (Possible Dead)</a></li>
-<li><a href="#_emermagnet">3.8. EmerMagnet</a></li>
-<li><a href="#_filevalidator">3.9. FileValidator</a></li>
-<li><a href="#_как_это_работает">3.10. Как это работает</a>
+<li><a href="#_emerlnx_dead">2.6. EmerLNX (Dead)</a></li>
+<li><a href="#_emertts_possible_dead">2.7. EmerTTS (Possible Dead)</a></li>
+<li><a href="#_emermagnet">2.8. EmerMagnet</a></li>
+<li><a href="#_filevalidator">2.9. FileValidator</a></li>
+<li><a href="#_как_это_работает">2.10. Как это работает</a>
 <ul class="sectlevel3">
-<li><a href="#_издатель">3.10.1. Издатель</a></li>
-<li><a href="#_валидатор">3.10.2. Валидатор</a></li>
-<li><a href="#_пользователь">3.10.3. Пользователь</a></li>
-<li><a href="#_как_этим_пользоваться">3.10.4. Как этим пользоваться</a></li>
-<li><a href="#_использование_программы">3.10.5. Использование программы</a></li>
+<li><a href="#_издатель">2.10.1. Издатель</a></li>
+<li><a href="#_валидатор">2.10.2. Валидатор</a></li>
+<li><a href="#_пользователь">2.10.3. Пользователь</a></li>
+<li><a href="#_как_этим_пользоваться">2.10.4. Как этим пользоваться</a></li>
+<li><a href="#_использование_программы">2.10.5. Использование программы</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_randpay">4. RandPay</a>
+<li><a href="#_randpay">3. RandPay</a>
 <ul class="sectlevel2">
-<li><a href="#_документация_в_pdf">4.1. Документация в PDF</a></li>
+<li><a href="#_документация_в_pdf">3.1. Документация в PDF</a></li>
 </ul>
 </li>
-<li><a href="#_mining">5. Mining</a></li>
-<li><a href="#_статьи">6. Статьи</a>
+<li><a href="#_mining">4. Mining</a></li>
+<li><a href="#_статьи">5. Статьи</a>
 <ul class="sectlevel2">
-<li><a href="#_статьивидео_oleg_khovayko">6.1. Статьи/Видео Oleg Khovayko</a>
+<li><a href="#_статьивидео_oleg_khovayko">5.1. Статьи/Видео Oleg Khovayko</a>
 <ul class="sectlevel3">
-<li><a href="#_ru">6.1.1. RU</a></li>
-<li><a href="#_en">6.1.2. EN</a></li>
+<li><a href="#_ru">5.1.1. RU</a></li>
+<li><a href="#_en">5.1.2. EN</a></li>
 </ul>
 </li>
-<li><a href="#_ru_2">6.2. RU</a>
+<li><a href="#_ru_2">5.2. RU</a>
 <ul class="sectlevel3">
-<li><a href="#_статьи_medium_com">6.2.1. Статьи medium.com</a></li>
-<li><a href="#_статьи_cryptor_net">6.2.2. Статьи cryptor.net</a></li>
-<li><a href="#_статьи_habr">6.2.3. Статьи habr</a></li>
-<li><a href="#_other">6.2.4. Other</a></li>
+<li><a href="#_статьи_medium_com">5.2.1. Статьи medium.com</a></li>
+<li><a href="#_статьи_cryptor_net">5.2.2. Статьи cryptor.net</a></li>
+<li><a href="#_статьи_habr">5.2.3. Статьи habr</a></li>
+<li><a href="#_other">5.2.4. Other</a></li>
 </ul>
 </li>
-<li><a href="#_en_2">6.3. EN</a></li>
+<li><a href="#_en_2">5.3. EN</a></li>
 </ul>
 </li>
-<li><a href="#_other_2">7. Other</a>
+<li><a href="#_other_2">6. Other</a>
 <ul class="sectlevel2">
-<li><a href="#_создание_tlsa_записи">7.1. Создание TLSA записи</a></li>
-<li><a href="#_генерация_запроса_csr_для_postmet">7.2. Генерация запроса CSR для Postmet</a></li>
+<li><a href="#_создание_tlsa_записи">6.1. Создание TLSA записи</a></li>
+<li><a href="#_генерация_запроса_csr_для_postmet">6.2. Генерация запроса CSR для Postmet</a></li>
 </ul>
 </li>
 </ul>
@@ -266,22 +269,26 @@ a {
 <pre>yay -S emercoin-bin</pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_сборка_из_исходных_кодов">2. Сборка из исходных кодов</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_сборка_из_исходных_кодов">1.1. Сборка из исходных кодов</h3>
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p><em>The Emercoin team happy to inform: we have written and released version 0.7.11, see the binaries and release notes on Github:</em> <a href="https://github.com/emercoin/emercoin/releases/tag/v0.7.11emc" class="bare">github.com/emercoin/emercoin/releases/tag/v0.7.11emc</a></p>
-</div>
-<div class="paragraph">
-<p><em>However, you can get the binaries for PC and Linux from the Github link above. Please, upgrade the Emercoin node on your system, it contains several important (but not critical) bugfixes.</em></p>
+<p>The Emercoin team happy to inform: we have written and released version 0.7.11, see the binaries and release notes on Github: <a href="https://github.com/emercoin/emercoin/releases/tag/v0.7.11emc" class="bare">github.com/emercoin/emercoin/releases/tag/v0.7.11emc</a></p>
 </div>
 <div class="paragraph">
-<p><em>Please inform us when you will upgrade your system.</em></p>
+<p>However, you can get the binaries for PC and Linux from the Github link above. Please, upgrade the Emercoin node on your system, it contains several important (but not critical) bugfixes.</p>
 </div>
 <div class="paragraph">
-<p><em>If you prefer to build the program yourself, do it by following way:</em></p>
+<p>Please inform us when you will upgrade your system.</p>
+</div>
+<div class="paragraph">
+<p>If you prefer to build the program yourself, do it by following way:</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Кто то из разработчиков
+</div>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -295,8 +302,9 @@ make -j 4</pre>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="_nvs">3. NVS</h2>
+<h2 id="_nvs_и_его_подсистемы">2. NVS и его подсистемы</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Emercoin предоставляет сервис для хранения пар имя &#8594; значение в своей цепочке блоков Name-Value Storage или NVS. Первоначальная концепция была унаследована от криптовалюты <a href="https://namecoin.info">NameCoin</a>, но в то время как NameCoin в основном ориентирована на поддержку децентрализованной доменной зоны .bit в своем расширении, Emercoin предоставляет универсальный расширяемый сервис для хранения и поддержки пар имя &#8594; значение без навязывания узкой специализации.</p>
@@ -419,7 +427,7 @@ make -j 4</pre>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="_emerdns">3.1. EmerDNS</h3>
+<h3 id="_emerdns">2.1. EmerDNS</h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Преимущества</dt>
@@ -474,7 +482,7 @@ make -j 4</pre>
 <p>Записи DNS можно легко получить из любого кошелька Emercoin с помощью Emercoin API, используя JSONRPC или командную строку, или с помощью стандартного протокола DNS RFC1034 , встроенного в каждый кошелек Emercoin.</p>
 </div>
 <div class="sect3">
-<h4 id="_поддерживаемые_зоны">3.1.1. Поддерживаемые зоны</h4>
+<h4 id="_поддерживаемые_зоны">2.1.1. Поддерживаемые зоны</h4>
 <div class="paragraph">
 <p>Технически EmerDNS может поддерживать любую DNS-зону или TLD. Однако для бесшовной интеграции в стандартное дерево DNS и предотвращения конфликтов с существующими DNS-зонами в настоящее время мы рекомендуем создавать записи EmerDNS только в зонах:</p>
 </div>
@@ -516,7 +524,7 @@ make -j 4</pre>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_доступ_к_зонам_emerdns">3.1.2. Доступ к зонам EmerDNS</h4>
+<h4 id="_доступ_к_зонам_emerdns">2.1.2. Доступ к зонам EmerDNS</h4>
 <div class="paragraph">
 <p>Есть несколько способов доступа к доменам EmerDNS.</p>
 </div>
@@ -602,7 +610,7 @@ make -j 4</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_синтаксис_записей_dns">3.1.3. Синтаксис записей DNS</h4>
+<h4 id="_синтаксис_записей_dns">2.1.3. Синтаксис записей DNS</h4>
 <div class="paragraph">
 <p>Типы записей поддерживаемые в EmerDNS:</p>
 </div>
@@ -960,7 +968,7 @@ make -j 4</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_создание_записей_dns">3.1.4. Создание записей DNS</h4>
+<h4 id="_создание_записей_dns">2.1.4. Создание записей DNS</h4>
 <div class="paragraph">
 <p>Создать запись вы можете двумя способами, первый это через CLI  и второй через GUI кошелька.</p>
 </div>
@@ -1043,7 +1051,7 @@ make -j 4</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_интеграция_в_обычное_дерево_dns">3.1.5. Интеграция в обычное дерево DNS</h4>
+<h4 id="_интеграция_в_обычное_дерево_dns">2.1.5. Интеграция в обычное дерево DNS</h4>
 <div class="paragraph">
 <p>Во-первых, нужно активировать <a href="https://www.ietf.org/rfc/rfc1034.txt">RFC1034</a> сервер DNS в Emercoin по задав два необязательных параметра в emercoin.conf конфигурационном файле, emcdns и emcdnsport :</p>
 </div>
@@ -1271,7 +1279,7 @@ www=A=192.241.241.153|TXT=Emercoin www-site</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_виртуальные_хосты_vhosts">3.1.6. Виртуальные хосты (vhosts)</h4>
+<h4 id="_виртуальные_хосты_vhosts">2.1.6. Виртуальные хосты (vhosts)</h4>
 <div class="paragraph">
 <p>Когда вы запускаете <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%85%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3">виртуальные хосты</a>, вам необходимо будет изменить конфигурацию вашего веб-сервера, чтобы правильно различать ваше имя хоста с таким количеством возможных суффиксов шлюза, которое вы хотите (или без суффикса, если имя разрешено LAN или локально). Это легко сделать, создав псевдоним vname со звездочкой "*" в качестве суффикса. В следующем примере показана соответствующая конфигурация <a href="https://ru.wikipedia.org/wiki/Apache_HTTP_Server">веб-сервера Apache</a> для виртуального сервера exchange.emc . Обратите внимание на строку ServerAlias:</p>
 </div>
@@ -1290,7 +1298,7 @@ www=A=192.241.241.153|TXT=Emercoin www-site</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_получение_ssl_сертификатов_с_postmet">3.1.7. Получение SSL сертификатов с Postmet</h4>
+<h4 id="_получение_ssl_сертификатов_с_postmet">2.1.7. Получение SSL сертификатов с Postmet</h4>
 <div class="paragraph">
 <p>C 2021 года появилась возможность получить SSL сертификат для доменных зон Emercoin. На сайте postmet.com можно оставить заявку на выпуск сертификата, следуя инструкциям на их сайте:</p>
 </div>
@@ -1333,7 +1341,7 @@ www=A=192.241.241.153|TXT=Emercoin www-site</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_emerssl">3.2. EmerSSL</h3>
+<h3 id="_emerssl">2.2. EmerSSL</h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Совсем коротко о сути технологии</dt>
@@ -1408,7 +1416,7 @@ www=A=192.241.241.153|TXT=Emercoin www-site</pre>
 </dl>
 </div>
 <div class="sect3">
-<h4 id="_создание_сертификата_emerssl">3.2.1. Создание сертификата EmerSSL</h4>
+<h4 id="_создание_сертификата_emerssl">2.2.1. Создание сертификата EmerSSL</h4>
 <div class="paragraph">
 <p>Запустите кошелек <strong>emercoin-qt</strong>, нажмите кнопку <strong>SSL</strong>:</p>
 </div>
@@ -1491,7 +1499,7 @@ www=A=192.241.241.153|TXT=Emercoin www-site</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_infocard">3.2.2. InfoCard</h4>
+<h4 id="_infocard">2.2.2. InfoCard</h4>
 <div class="paragraph">
 <p><strong>EmerSSL InfoCard</strong> - это децентрализованная распределенная "визитная карточка" система на блокчейне Emercoin, которая дополняет систему EmerSSL для входа без пароля, позволяя автоматически заполнять профили веб-сайтов. InfoCard позволяет организовать информацию в иерархическую структуру, что может быть полезно для быстрого обновления содержимого всех карточек в компаниях или других организациях.</p>
 </div>
@@ -1591,7 +1599,7 @@ To link your EmerSSL certificate to this info file, run ./gen_tpl.sh and use val
 </div>
 </div>
 <div class="sect2">
-<h3 id="_emerssh">3.3. EmerSSH</h3>
+<h3 id="_emerssh">2.3. EmerSSH</h3>
 <div class="paragraph">
 <p>Используете серверную PKI? Представьте, что случится, если вашему администратору захочется пошалить.</p>
 </div>
@@ -1656,7 +1664,7 @@ To link your EmerSSL certificate to this info file, run ./gen_tpl.sh and use val
 </dl>
 </div>
 <div class="sect3">
-<h4 id="_установка">3.3.1. Установка</h4>
+<h4 id="_установка">2.3.1. Установка</h4>
 <div class="paragraph">
 <p>Ниже приведены инструкции по установке и настройке EmerSSH на Debian и производных серверах, таких как Ubuntu, а также по использованию EmerSSH для входа на сервер с клиентского компьютера. Мы предполагаем, что на вашем сервере уже запущен кошелек Emercoin.
 Установка необходимых пакетов на сервер</p>
@@ -1692,7 +1700,7 @@ $ make install</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_настройка_emerssh">3.3.2. Настройка EmerSSH</h4>
+<h4 id="_настройка_emerssh">2.3.2. Настройка EmerSSH</h4>
 <div class="paragraph">
 <p>Теперь вам нужно отредактировать файл конфигурации:</p>
 </div>
@@ -2018,7 +2026,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAgmzL............</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_emerdpo">3.4. EmerDPO</h3>
+<h3 id="_emerdpo">2.4. EmerDPO</h3>
 <div class="paragraph">
 <p>Чем бы вы ни владели, соответствующие данные обычно хранятся в централизованных базах данных — открытые для всевозможного «централизованного» манипулирования. EmerDPO устроен по-другому.</p>
 </div>
@@ -2081,7 +2089,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAgmzL............</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_enumer">3.5. ENUMER</h3>
+<h3 id="_enumer">2.5. ENUMER</h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/enumer_big.png" alt="enumer big">
@@ -2095,7 +2103,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAgmzL............</pre>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_описание">3.5.1. Описание</h4>
+<h4 id="_описание">2.5.1. Описание</h4>
 <div class="paragraph">
 <p>В мире всё большее применение находит IP-телефония, которая обладает рядом преимуществ по сравнению с классической. IP-решения как правило дешевле классических и обладают большей функциональностью. В настоящее время IP ATC находят применение в различных организациях, но основные телефонные сети продолжают использовать классические решения, пусть даже и на базе цифровых АТС. В результате такого положения вещей, связь даже между двумя IP ATC происходит через обычную телефонную сеть, PSTN. Рассмотрим пример:</p>
 </div>
@@ -2136,7 +2144,7 @@ PBX Продавца<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_enum">3.5.2. ENUM</h4>
+<h4 id="_enum">2.5.2. ENUM</h4>
 <div class="paragraph">
 <p>Протокол ENUM (<a href="https://www.rfc-editor.org/rfc/rfc6116">rfc6116</a>) работает как распределённая адресная книга, и позволяет по номеру телефона «найти дорогу» к соответствующей IP ATC, которая обслуживает этот номер. Описание протокола: <a href="https://en.wikipedia.org/wiki/Telephone_number_mapping" class="bare">en.wikipedia.org/wiki/Telephone_number_mapping</a></p>
 </div>
@@ -2565,19 +2573,19 @@ enumtollfree=@enum:tollfree</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_emerlnx_dead">3.6. EmerLNX (Dead)</h3>
+<h3 id="_emerlnx_dead">2.6. EmerLNX (Dead)</h3>
 <div class="paragraph">
 <p>pass</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_emertts_possible_dead">3.7. EmerTTS (Possible Dead)</h3>
+<h3 id="_emertts_possible_dead">2.7. EmerTTS (Possible Dead)</h3>
 <div class="paragraph">
 <p>pass</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_emermagnet">3.8. EmerMagnet</h3>
+<h3 id="_emermagnet">2.8. EmerMagnet</h3>
 <div class="paragraph">
 <p>EmerMAGNET - это хранилище магнитных ссылок BitTorrent под аббревиатурой сервиса <strong>«magnet»</strong> в EmerNVS.</p>
 </div>
@@ -2609,7 +2617,7 @@ enumtollfree=@enum:tollfree</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_filevalidator">3.9. FileValidator</h3>
+<h3 id="_filevalidator">2.9. FileValidator</h3>
 <div class="paragraph">
 <p>FV&#8201;&#8212;&#8201;сервис проверки целостности файлов, полученных из недостоверных источников.</p>
 </div>
@@ -2624,12 +2632,12 @@ enumtollfree=@enum:tollfree</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_как_это_работает">3.10. Как это работает</h3>
+<h3 id="_как_это_работает">2.10. Как это работает</h3>
 <div class="paragraph">
 <p>Рассмотрим работу системы на реальном примере. Пусть есть издатель Emercoin, который сам себе валидатор (простейший случай). Издатель выпустил бинарный файл-инсталлятор кошелька Emercoin для Windows, имя файла: emercoin-0.7.10-win64-setup.exe.</p>
 </div>
 <div class="sect3">
-<h4 id="_издатель">3.10.1. Издатель</h4>
+<h4 id="_издатель">2.10.1. Издатель</h4>
 <div class="paragraph">
 <p>Издатель Emercoin желает воспользоваться предлагаемой системой FV для того, чтобы пользователи могли проверить полученный бинарный файл и убедиться, что они получили именно то, что распространяет издатель.</p>
 </div>
@@ -2670,7 +2678,7 @@ enumtollfree=@enum:tollfree</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_валидатор">3.10.2. Валидатор</h4>
+<h4 id="_валидатор">2.10.2. Валидатор</h4>
 <div class="paragraph">
 <p>Валидатор имеет в Emercoin NVS уникальное имя, с которым связан Emercoin address. Имя имеет префикс сервиса <strong>val:</strong>, и может содержать только латинские символы нижнего регистра, а также точку и минус. То есть разрешённое множество символов: <strong>[a-z.-]</strong>. Пробелы, табуляции, спецсимволы или символы национальных кодировок также запрещены. Это ограничение призвано заблокировать манипуляции, позволяющие создавать внешне похожие имена валидаторов и от их имени подписывать всякое. Типичный пример такой манипуляции&#8201;&#8212;&#8201;внешне похожие, но отличающиеся имена: <strong>paypal - paypaI – paypa1</strong>.</p>
 </div>
@@ -2791,7 +2799,7 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 </div>
 </div>
 <div class="sect3">
-<h4 id="_пользователь">3.10.3. Пользователь</h4>
+<h4 id="_пользователь">2.10.3. Пользователь</h4>
 <div class="paragraph">
 <p>Пользователь, получив файл из недоверенного источника, желает убедиться, что данный файл – именно тот, который опубликовал издатель. Для этого он предпринимает следующие действия.</p>
 </div>
@@ -2889,7 +2897,7 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 </div>
 </div>
 <div class="sect3">
-<h4 id="_как_этим_пользоваться">3.10.4. Как этим пользоваться</h4>
+<h4 id="_как_этим_пользоваться">2.10.4. Как этим пользоваться</h4>
 <div class="paragraph">
 <p>Выше, в разделе “как это работает”, был предоставлен пошаговый алгоритм как генерации и публикации подписей, так и проверки файлов. Понятно, что вручную все эти операции делать сложно, особенно для конечного пользователя. Поэтому для практического применения мы написали программу fv.php, которую можно скачать из репозитория Emercoin <a href="https://github.com/emercoin/FV">здесь</a>.</p>
 </div>
@@ -2917,7 +2925,7 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 </div>
 </div>
 <div class="sect3">
-<h4 id="_использование_программы">3.10.5. Использование программы</h4>
+<h4 id="_использование_программы">2.10.5. Использование программы</h4>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Тестирование</dt>
@@ -2986,7 +2994,7 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 </div>
 </div>
 <div class="sect1">
-<h2 id="_randpay">4. RandPay</h2>
+<h2 id="_randpay">3. RandPay</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Randpay</strong> - высокомасштабируемая подсистема микроплатежей криптовалюты Emercoin.</p>
@@ -3004,13 +3012,13 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 <p>Это удобно в ненадёжном сетевом окружении или при эпизодических платежах.</p>
 </div>
 <div class="sect2">
-<h3 id="_документация_в_pdf">4.1. <a href="https://emercoin.com/media/Randpay%20Whitepaper%20RU%20.pdf">Документация в PDF</a></h3>
+<h3 id="_документация_в_pdf">3.1. <a href="https://emercoin.com/media/Randpay%20Whitepaper%20RU%20.pdf">Документация в PDF</a></h3>
 
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_mining">5. Mining</h2>
+<h2 id="_mining">4. Mining</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Как и в случае с любой другой криптовалютой, вы можете зарабатывать монеты, поддерживая сеть и создавая новые блоки. Это можно сделать либо путем объединенного майнинга с Биткоином, либо путем чеканки блоков в собственной цепочке блоков Emercoin.</p>
@@ -3021,12 +3029,12 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 </div>
 </div>
 <div class="sect1">
-<h2 id="_статьи">6. Статьи</h2>
+<h2 id="_статьи">5. Статьи</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_статьивидео_oleg_khovayko">6.1. Статьи/Видео Oleg Khovayko</h3>
+<h3 id="_статьивидео_oleg_khovayko">5.1. Статьи/Видео Oleg Khovayko</h3>
 <div class="sect3">
-<h4 id="_ru">6.1.1. RU</h4>
+<h4 id="_ru">5.1.1. RU</h4>
 <div class="paragraph">
 <p><a href="https://dzen.ru/olegarch" class="bare">dzen.ru/olegarch</a></p>
 </div>
@@ -3041,14 +3049,14 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 </div>
 </div>
 <div class="sect3">
-<h4 id="_en">6.1.2. EN</h4>
+<h4 id="_en">5.1.2. EN</h4>
 <div class="paragraph">
 <p><a href="https://cryptogeek.info/en/blog/emercoin-interview" class="bare">cryptogeek.info/en/blog/emercoin-interview</a></p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ru_2">6.2. RU</h3>
+<h3 id="_ru_2">5.2. RU</h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Криптоскам: 3 категории криптопроектов, которые заставят вас усомниться в децентрализации и начать обходить их стороной. Примеры и контрпримеры</dt>
@@ -3058,7 +3066,7 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 </dl>
 </div>
 <div class="sect3">
-<h4 id="_статьи_medium_com">6.2.1. Статьи medium.com</h4>
+<h4 id="_статьи_medium_com">5.2.1. Статьи medium.com</h4>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Используй Блокчейн Emercoin, это просто!</dt>
@@ -3117,7 +3125,7 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 </div>
 </div>
 <div class="sect3">
-<h4 id="_статьи_cryptor_net">6.2.2. Статьи cryptor.net</h4>
+<h4 id="_статьи_cryptor_net">5.2.2. Статьи cryptor.net</h4>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Etherium vs EmerCoin. О разнице подходов в использовании Блокчейна</dt>
@@ -3244,7 +3252,7 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 </div>
 </div>
 <div class="sect3">
-<h4 id="_статьи_habr">6.2.3. Статьи habr</h4>
+<h4 id="_статьи_habr">5.2.3. Статьи habr</h4>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Лекции по криптографии, блокчейну и вообще</dt>
@@ -3355,7 +3363,7 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 </div>
 </div>
 <div class="sect3">
-<h4 id="_other">6.2.4. Other</h4>
+<h4 id="_other">5.2.4. Other</h4>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Emercoin — инфраструктурные сервисы на блокчейне</dt>
@@ -3367,7 +3375,7 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 </div>
 </div>
 <div class="sect2">
-<h3 id="_en_2">6.3. EN</h3>
+<h3 id="_en_2">5.3. EN</h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Emercoin: The cryptocurrency caught between the old school and modern age</dt>
@@ -3388,10 +3396,10 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 </div>
 </div>
 <div class="sect1">
-<h2 id="_other_2">7. Other</h2>
+<h2 id="_other_2">6. Other</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_создание_tlsa_записи">7.1. Создание TLSA записи</h3>
+<h3 id="_создание_tlsa_записи">6.1. Создание TLSA записи</h3>
 <div class="paragraph">
 <p>Сгененерировать запись можно утилитой <a href="https://github.com/letoams/hash-slinger">hash-slinger</a> или на одном из многочисленных онлайн сервисов. Например на этом <a href="https://ssl-tools.net/tlsa-generator" class="bare">ssl-tools.net/tlsa-generator</a></p>
 </div>
@@ -3504,7 +3512,7 @@ _443._tcp.rtfm.emc. IN TLSA 3 1 1 aca2d0e69e13223580a9eb4b2a4435c5463e81db8cfc2f
 </div>
 </div>
 <div class="sect2">
-<h3 id="_генерация_запроса_csr_для_postmet">7.2. Генерация запроса CSR для Postmet</h3>
+<h3 id="_генерация_запроса_csr_для_postmet">6.2. Генерация запроса CSR для Postmet</h3>
 <div class="paragraph">
 <p><a href="https://github.com/emercoin/emcssl/tree/master/PostmetSSL" class="bare">github.com/emercoin/emcssl/tree/master/PostmetSSL</a></p>
 </div>
@@ -3514,7 +3522,7 @@ _443._tcp.rtfm.emc. IN TLSA 3 1 1 aca2d0e69e13223580a9eb4b2a4435c5463e81db8cfc2f
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-25 09:34:56 +0300
+Last updated 2023-04-25 11:34:17 +0300
 </div>
 </div>
 </body>
