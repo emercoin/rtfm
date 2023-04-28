@@ -2,21 +2,33 @@
 include::config.adoc[]
 include::links.adoc[]
 
+[#installation]
+[desc="Установка, сборка из исходных кодов"]
 == Installation
 include::chapters/installation.adoc[]
 
+[#nvs_subsystems]
+[desc="Описание Name Value Storage и подсистем созданных на его основе"]
 == NVS и его подсистемы
 include::chapters/nvs_subsystems.adoc[]
 
+[#randpay]
+[desc="Подсистема массовых микроплатежей"]
 == RandPay
 include::chapters/randpay.adoc[]
 
+[desc="Майнинг Pos, PoW"]
+[#mining]
 == Mining
 include::chapters/mining.adoc[]
 
+[#articles]
+[desc="Статьи и видеоматериалы связанные с Emercoin"]
 == Статьи
 include::chapters/articles.adoc[]
 
+[#other]
+[desc="Все что не вошло в основные главы, песочница"]
 == Other
 include::chapters/other.adoc[]
 
