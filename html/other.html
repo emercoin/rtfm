@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.18">
+<link rel="icon" type="image/png" href="images/favicon-32x32.png">
+<title>Emercoin</title>
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+
+@import url(//fonts.googleapis.com/css?family=Noto+Sans);
+@import url(https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css); /* Default asciidoc style framework - important */
+
+/* CUSTOMISATIONS */
+/* Change the values in root for quick customisation. If you want even more fine grain... venture further. */
+:root{
+--maincolor:#282c34;
+--primarycolor:#f39c12;
+--secondarycolor:#03a9f4;
+--tertiarycolor:#4db6ac;
+--sidebarbackground:#21252b;
+--linkcolor:#f44336;
+--linkcoloralternate:#ff9800;
+--white:#FFFFFF;
+}
+
+/* Text styles */
+
+body{font-family: "Noto Sans",sans-serif;background-color: var(--maincolor);color:var(--white);}
+
+h1{color:var(--primarycolor) !important;font-family:"Noto Sans",sans-serif;}
+h2,h3,h4,h5,h6{color:var(--secondarycolor) !important;font-family:"Noto Sans",sans-serif;}
+.title{color:var(--white) !important;font-family:"Noto Sans",sans-serif;font-style: normal; font-weight: normal;}
+p{font-family: "Noto Sans",sans-serif ! important}
+#toc.toc2 a:link{color:var(--linkcolor);}
+blockquote{color:var(--tertiarycolor) !important}
+.quoteblock{color:var(--white)}
+code{color:var(--linkcoloralternate);background-color: var(--sidebarbackground) !important}
+
+
+/* Table styles */
+th{background-color: var(--maincolor);color:var(--white) !important;}
+td{background-color: var(--maincolor);color: var(--linkcoloralternate) !important}
+
+
+#toc.toc2{background-color:var(--sidebarbackground);}
+#toctitle{color:var(--white);}
+
+/* Responsiveness fixes */
+video {
+  max-width: 100%;
+}
+
+@media all and (max-width: 600px) {
+  table {
+    width: 55vw!important;
+    font-size: 3vw;
+  }
+}
+
+.exampleblock > .content {
+  background-color: var(--maincolor);
+}
+
+a {
+  color: var(--secondarycolor);
+}
+
+.admonitionblock td.icon .icon-tip::before {
+  text-shadow: none;
+  color: var(--white);
+}
+.admonitionblock td.icon .icon-note::before {
+  color: var(--tertiarycolor);
+}
+.admonitionblock td.icon .icon-important::before {
+  color: var(--linkcolor);
+}
+/*.admonitionblock td.icon .icon-caution::before {
+  color: var(--linkcoloralternate);
+}*/
+.admonitionblock td.icon .icon-warning::before {
+  color: var(--primarycolor);
+}
+
+#preamble > .sectionbody > .paragraph:first-of-type p {
+  color: var(--white);
+}
+
+.quoteblock blockquote::before {
+  color: var(--primarycolor);
+}
+.quoteblock .attribution cite, .verseblock .attribution cite {
+  color: var(--white);
+}
+.verseblock pre {
+  color: var(--white);
+}
+.quoteblock blockquote, .quoteblock blockquote p {
+  color: var(--white);
+}
+
+.sidebarblock {
+  background: var(--sidebarbackground);
+}
+.literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
+  background: var(--sidebarbackground);
+  color: var(--white);
+}
+
+#header .details {
+  color: var(--white);
+}
+#header .details span.email a {
+  color: var(--linkcoloralternate);
+}
+
+
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#37375b}
+
+</style>
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="other" class="article">
+<div id="header">
+<h1>Emercoin</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Содержание</div>
+<p><span class="toc-root"><a href="index.html">Emercoin</a></span></p><ul class="sectlevel1">
+<li><a href="installation.html">1. Installation</a>
+</li>
+<li><a href="nvs_subsystems.html">2. NVS и его подсистемы</a>
+</li>
+<li><a href="randpay.html">3. RandPay</a>
+</li>
+<li><a href="mining.html">4. Mining</a>
+</li>
+<li><a href="articles.html">5. Статьи</a>
+</li>
+<li><a href="other.html"><span class="toc-current">6. Other</span></a>
+<ul class="sectlevel2">
+<li><a href="other.html#_создание_tlsa_записи">6.1. Создание TLSA записи</a>
+</li>
+<li><a href="other.html#_генерация_запроса_csr_для_postmet">6.2. Генерация запроса CSR для Postmet</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="other">6. Other</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_создание_tlsa_записи">6.1. Создание TLSA записи</h3>
+<div class="paragraph">
+<p>Сгененерировать запись можно утилитой <a href="https://github.com/letoams/hash-slinger">hash-slinger</a> или на одном из многочисленных онлайн сервисов. Например на этом <a href="https://ssl-tools.net/tlsa-generator" class="bare">ssl-tools.net/tlsa-generator</a></p>
+</div>
+<div class="paragraph">
+<p>Рассмотрим вариант генерации записи при помощи утилиты <strong>hash-slinger</strong>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>tlsa --create --usage 3 --mtype 1 --selector 1 --certificate ./rtfm.emc.crt rtfm.emc</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ключ <strong>usage</strong> — cпособ использования сертификата TLS-сервера:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 — ограничение CA — TLSA содержит информацию о сертификате удостоверяющего центра (УЦ). УЦ должен присутствовать в цепочке валидации при установлении TLS-соединения;</p>
+</li>
+<li>
+<p>1 — служба ограничения сертификата — TLSA содержит информацию о сертификате сервера;</p>
+</li>
+<li>
+<p>2 — доверенный источник — TLSA содержит информацию о корневом сертификате;</p>
+</li>
+<li>
+<p>3 — сертификат домена — TLSA содержит информацию о сертификате сервера. Этот сервер должен быть конечным сертификатом в цепочке валидации. Такой способ позволяет использовать самоподписанные сертификаты.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ключ <strong>mtype</strong> — какая часть сертификата используется при сопоставлении его содержимого со значением TLSA:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 — полный сертификат;</p>
+</li>
+<li>
+<p>1 — открытый ключ.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ключ <strong>selector</strong> — данные сертификата:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 — хеш не используется — полное точное совпадение;</p>
+</li>
+<li>
+<p>1 — SHA-256 — совпадение значений хеш-функции SHA-256;</p>
+</li>
+<li>
+<p>2 — SHA-512 — совпадение значений хеш-функции SHA-512.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ключ <strong>certificate</strong> принимает файл сертификата.</p>
+</div>
+<div class="paragraph">
+<p>Последний параметр (<strong>rtfm.emc</strong>) указывается без ключа, это имя домена для которого вы делаете запись.</p>
+</div>
+<div class="paragraph">
+<p>После выполнения команды на консоль будут выведены данные для формирования TLSA записи:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Got a certificate for rtfm.emc. with Subject: /C=RU/ST=RU/L=Moscow/O=Postmet/OU=POSTMET/CN=rtfm.emc
+_443._tcp.rtfm.emc. IN TLSA 3 1 1 aca2d0e69e13223580a9eb4b2a4435c5463e81db8cfc2fc69554a90ad552a3a6</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Далее формируем запись TLSA для отправки в БЧ Emercoin, со сроком хранения 5000 дней:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>emercoin-cli name_new "dns:rtfm.emc" "A=208.87.98.37|AAAA=2a0b:7080:20::1:2c4e|TLSA=3:1:1:aca2d0e69e13223580a9eb4b2a4435c5463e81db8cfc2fc69554a90ad552a3a6|TTL=7200" 5000</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Если домен уже существует в БЧ, используйте ключ <strong>name_update</strong>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>После успешного внесения записи, вы можете проверить что DNS сервер отдает ее корректно. Выполните команду:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>dig +short _443._tcp.rtfm.emc TLSA</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>В результате выполнения вы должны получить параметры и хеш сертификата:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>3 1 1 aca2d0e69e13223580a9eb4b2a4435c5463e81db8cfc2fc69554a90a d552a3a6</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_генерация_запроса_csr_для_postmet">6.2. Генерация запроса CSR для Postmet</h3>
+<div class="paragraph">
+<p><a href="https://github.com/emercoin/emcssl/tree/master/PostmetSSL" class="bare">github.com/emercoin/emcssl/tree/master/PostmetSSL</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="articles.html">Статьи</a> | ↑ Up: <a href="index.html">Emercoin</a></p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2023-04-28 19:06:14 +0300
+</div>
+</div>
+</body>
+</html>

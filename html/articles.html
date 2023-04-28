@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.18">
+<link rel="icon" type="image/png" href="images/favicon-32x32.png">
+<title>Emercoin</title>
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+
+@import url(//fonts.googleapis.com/css?family=Noto+Sans);
+@import url(https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css); /* Default asciidoc style framework - important */
+
+/* CUSTOMISATIONS */
+/* Change the values in root for quick customisation. If you want even more fine grain... venture further. */
+:root{
+--maincolor:#282c34;
+--primarycolor:#f39c12;
+--secondarycolor:#03a9f4;
+--tertiarycolor:#4db6ac;
+--sidebarbackground:#21252b;
+--linkcolor:#f44336;
+--linkcoloralternate:#ff9800;
+--white:#FFFFFF;
+}
+
+/* Text styles */
+
+body{font-family: "Noto Sans",sans-serif;background-color: var(--maincolor);color:var(--white);}
+
+h1{color:var(--primarycolor) !important;font-family:"Noto Sans",sans-serif;}
+h2,h3,h4,h5,h6{color:var(--secondarycolor) !important;font-family:"Noto Sans",sans-serif;}
+.title{color:var(--white) !important;font-family:"Noto Sans",sans-serif;font-style: normal; font-weight: normal;}
+p{font-family: "Noto Sans",sans-serif ! important}
+#toc.toc2 a:link{color:var(--linkcolor);}
+blockquote{color:var(--tertiarycolor) !important}
+.quoteblock{color:var(--white)}
+code{color:var(--linkcoloralternate);background-color: var(--sidebarbackground) !important}
+
+
+/* Table styles */
+th{background-color: var(--maincolor);color:var(--white) !important;}
+td{background-color: var(--maincolor);color: var(--linkcoloralternate) !important}
+
+
+#toc.toc2{background-color:var(--sidebarbackground);}
+#toctitle{color:var(--white);}
+
+/* Responsiveness fixes */
+video {
+  max-width: 100%;
+}
+
+@media all and (max-width: 600px) {
+  table {
+    width: 55vw!important;
+    font-size: 3vw;
+  }
+}
+
+.exampleblock > .content {
+  background-color: var(--maincolor);
+}
+
+a {
+  color: var(--secondarycolor);
+}
+
+.admonitionblock td.icon .icon-tip::before {
+  text-shadow: none;
+  color: var(--white);
+}
+.admonitionblock td.icon .icon-note::before {
+  color: var(--tertiarycolor);
+}
+.admonitionblock td.icon .icon-important::before {
+  color: var(--linkcolor);
+}
+/*.admonitionblock td.icon .icon-caution::before {
+  color: var(--linkcoloralternate);
+}*/
+.admonitionblock td.icon .icon-warning::before {
+  color: var(--primarycolor);
+}
+
+#preamble > .sectionbody > .paragraph:first-of-type p {
+  color: var(--white);
+}
+
+.quoteblock blockquote::before {
+  color: var(--primarycolor);
+}
+.quoteblock .attribution cite, .verseblock .attribution cite {
+  color: var(--white);
+}
+.verseblock pre {
+  color: var(--white);
+}
+.quoteblock blockquote, .quoteblock blockquote p {
+  color: var(--white);
+}
+
+.sidebarblock {
+  background: var(--sidebarbackground);
+}
+.literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
+  background: var(--sidebarbackground);
+  color: var(--white);
+}
+
+#header .details {
+  color: var(--white);
+}
+#header .details span.email a {
+  color: var(--linkcoloralternate);
+}
+
+
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#37375b}
+
+</style>
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="articles" class="article">
+<div id="header">
+<h1>Emercoin</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Содержание</div>
+<p><span class="toc-root"><a href="index.html">Emercoin</a></span></p><ul class="sectlevel1">
+<li><a href="installation.html">1. Installation</a>
+</li>
+<li><a href="nvs_subsystems.html">2. NVS и его подсистемы</a>
+</li>
+<li><a href="randpay.html">3. RandPay</a>
+</li>
+<li><a href="mining.html">4. Mining</a>
+</li>
+<li><a href="articles.html"><span class="toc-current">5. Статьи</span></a>
+<ul class="sectlevel2">
+<li><a href="articles.html#_статьивидео_oleg_khovayko">5.1. Статьи/Видео Oleg Khovayko</a>
+<ul class="sectlevel3">
+<li><a href="articles.html#_ru">5.1.1. RU</a>
+</li>
+<li><a href="articles.html#_en">5.1.2. EN</a>
+</li>
+</ul>
+</li>
+<li><a href="articles.html#_ru_2">5.2. RU</a>
+<ul class="sectlevel3">
+<li><a href="articles.html#_статьи_medium_com">5.2.1. Статьи medium.com</a>
+</li>
+<li><a href="articles.html#_статьи_cryptor_net">5.2.2. Статьи cryptor.net</a>
+</li>
+<li><a href="articles.html#_статьи_habr">5.2.3. Статьи habr</a>
+</li>
+<li><a href="articles.html#_other">5.2.4. Other</a>
+</li>
+</ul>
+</li>
+<li><a href="articles.html#_en_2">5.3. EN</a>
+</li>
+</ul>
+</li>
+<li><a href="other.html">6. Other</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="articles">5. Статьи</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_статьивидео_oleg_khovayko">5.1. Статьи/Видео Oleg Khovayko</h3>
+<div class="sect3">
+<h4 id="_ru">5.1.1. RU</h4>
+<div class="paragraph">
+<p><a href="https://dzen.ru/olegarch" class="bare">dzen.ru/olegarch</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.youtube.com/watch?v=l22kA2mACvE" class="bare">www.youtube.com/watch?v=l22kA2mACvE</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.youtube.com/watch?v=JxwGjMGB5sw" class="bare">www.youtube.com/watch?v=JxwGjMGB5sw</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.osp.ru/os/2016/04/13050988" class="bare">www.osp.ru/os/2016/04/13050988</a></p>
+</div>
+<h5 id="_лекции_по_практическому_использованию_emercoin_плейлист" class="discrete">Лекции по практическому использованию Emercoin (плейлист)</h5>
+<div class="paragraph">
+<p><a href="https://www.youtube.com/playlist?list=PLrRnb61b4sDcUBlImQ8d_4VOc240gowWS" class="bare">www.youtube.com/playlist?list=PLrRnb61b4sDcUBlImQ8d_4VOc240gowWS</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_en">5.1.2. EN</h4>
+<div class="paragraph">
+<p><a href="https://cryptogeek.info/en/blog/emercoin-interview" class="bare">cryptogeek.info/en/blog/emercoin-interview</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ru_2">5.2. RU</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Криптоскам: 3 категории криптопроектов, которые заставят вас усомниться в децентрализации и начать обходить их стороной. Примеры и контрпримеры</dt>
+<dd>
+<p><a href="https://telegra.ph/aware-cryptoscams-11-18" class="bare">telegra.ph/aware-cryptoscams-11-18</a></p>
+</dd>
+</dl>
+</div>
+<div class="sect3">
+<h4 id="_статьи_medium_com">5.2.1. Статьи medium.com</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Используй Блокчейн Emercoin, это просто!</dt>
+<dd>
+<p><a href="https://medium.com/test-pubs/используй-блокчейн-emercoin-это-просто-dcce60ecb9e2" class="bare">medium.com/test-pubs/используй-блокчейн-emercoin-это-просто-dcce60ecb9e2</a></p>
+</dd>
+<dt class="hdlist1">emerDNS. Платформа для интернета без цензуры</dt>
+<dd>
+<p><a href="https://medium.com/@emer.rutech/emerdns-платформа-для-интернета-без-цензуры-fcb1c6bea64c" class="bare">medium.com/@emer.rutech/emerdns-платформа-для-интернета-без-цензуры-fcb1c6bea64c</a></p>
+</dd>
+<dt class="hdlist1">Блокчейн против блокировок</dt>
+<dd>
+<p><a href="https://medium.com/@emer.rutech/блокчейн-против-блокировок-a2de772e788d" class="bare">medium.com/@emer.rutech/блокчейн-против-блокировок-a2de772e788d</a></p>
+</dd>
+<dt class="hdlist1">Блокчейн в образовании</dt>
+<dd>
+<p><a href="https://medium.com/@emer.rutech/интервью-дайджест-3-2019-283dd4fb05b9" class="bare">medium.com/@emer.rutech/интервью-дайджест-3-2019-283dd4fb05b9</a></p>
+</dd>
+<dt class="hdlist1">Randpay</dt>
+<dd>
+<p><a href="https://medium.com/test-pubs/используй-блокчейн-emercoin-это-просто-dcce60ecb9e2" class="bare">medium.com/test-pubs/используй-блокчейн-emercoin-это-просто-dcce60ecb9e2</a></p>
+</dd>
+<dt class="hdlist1">Emercoin — 10 вопросов и 10 ответов</dt>
+<dd>
+<p><a href="https://medium.com/@emer.rutech/emercoin-10-вопросов-и-10-ответов-b578dd0529e9" class="bare">medium.com/@emer.rutech/emercoin-10-вопросов-и-10-ответов-b578dd0529e9</a></p>
+</dd>
+<dt class="hdlist1">Eggs Datacenter: как Emercoin позволил реализовать идею распределённого дата-центра на блокчейне</dt>
+<dd>
+<p><a href="https://medium.com/test-pubs/используй-блокчейн-emercoin-это-просто-dcce60ecb9e2" class="bare">medium.com/test-pubs/используй-блокчейн-emercoin-это-просто-dcce60ecb9e2</a></p>
+</dd>
+<dt class="hdlist1">Новые плагины Blockchain DNS для интернет браузеров</dt>
+<dd>
+<p><a href="https://medium.com/@emer.rutech/новые-плагины-blockchain-dns-для-интернет-браузеров-5f99e454589f" class="bare">medium.com/@emer.rutech/новые-плагины-blockchain-dns-для-интернет-браузеров-5f99e454589f</a></p>
+</dd>
+<dt class="hdlist1">Эмеркоин сделал VoIP телефонию бесплатной с помощью ENUMER!</dt>
+<dd>
+<p><a href="https://medium.com/@emer.rutech/эмеркоин-сделал-voip-телефонию-бесплатной-с-помощью-enumer-1e9e3f64187f" class="bare">medium.com/@emer.rutech/эмеркоин-сделал-voip-телефонию-бесплатной-с-помощью-enumer-1e9e3f64187f</a></p>
+</dd>
+<dt class="hdlist1">Разворачиваем Emercoin testnet</dt>
+<dd>
+<p><a href="https://medium.com/@emer.rutech/разворачиваем-emercoin-testnet-f31fa4243762" class="bare">medium.com/@emer.rutech/разворачиваем-emercoin-testnet-f31fa4243762</a></p>
+</dd>
+<dt class="hdlist1">EmerDNS — альтернатива DNSSEC</dt>
+<dd>
+<p><a href="https://medium.com/@emer.rutech/emerdns-альтернатива-dnssec-84fd2990af3a" class="bare">medium.com/@emer.rutech/emerdns-альтернатива-dnssec-84fd2990af3a</a></p>
+</dd>
+<dt class="hdlist1">Используй Блокчейн Emercoin, это просто!</dt>
+<dd>
+<p><a href="https://medium.com/test-pubs/используй-блокчейн-emercoin-это-просто-dcce60ecb9e2" class="bare">medium.com/test-pubs/используй-блокчейн-emercoin-это-просто-dcce60ecb9e2</a></p>
+</dd>
+<dt class="hdlist1">Вы не поверите, но на Блокчейне можно вести блог!</dt>
+<dd>
+<p><a href="https://medium.com/@emer.rutech/вы-не-поверите-но-на-блокчейне-можно-вести-блог-c7ba9f3b5820" class="bare">medium.com/@emer.rutech/вы-не-поверите-но-на-блокчейне-можно-вести-блог-c7ba9f3b5820</a></p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_статьи_cryptor_net">5.2.2. Статьи cryptor.net</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Etherium vs EmerCoin. О разнице подходов в использовании Блокчейна</dt>
+<dd>
+<p><a href="https://cryptor.net/kriptovalyuty/etherium-vs-emercoin-o-raznice-podhodov-v-ispolzovanii-blokcheyna" class="bare">cryptor.net/kriptovalyuty/etherium-vs-emercoin-o-raznice-podhodov-v-ispolzovanii-blokcheyna</a></p>
+</dd>
+<dt class="hdlist1">Корпорация IT-Farm инвестирует в блокчейн Emercoin</dt>
+<dd>
+<p><a href="https://cryptor.net/news/korporaciya-it-farm-investiruet-v-blokcheyn-emercoin-577" class="bare">cryptor.net/news/korporaciya-it-farm-investiruet-v-blokcheyn-emercoin-577</a></p>
+</dd>
+<dt class="hdlist1">Обзор криптовалюты Emercoin</dt>
+<dd>
+<p><a href="https://cryptor.net/kriptovalyuty/obzor-kriptovalyuty-emercoin" class="bare">cryptor.net/kriptovalyuty/obzor-kriptovalyuty-emercoin</a></p>
+</dd>
+<dt class="hdlist1">Собираем кошелек EmerCoin v.05 на Raspberry Pi</dt>
+<dd>
+<p><a href="https://cryptor.net/tutorial/sobiraem-koshelek-emercoin-v05-na-raspberry-pi" class="bare">cryptor.net/tutorial/sobiraem-koshelek-emercoin-v05-na-raspberry-pi</a></p>
+</dd>
+<dt class="hdlist1">Децентрализованный альтернативный DNS на основе криптовалюты EmerCoin</dt>
+<dd>
+<p><a href="https://cryptor.net/kriptovalyuty/decentralizovannyy-alternativnyy-dns-na-osnove-kriptovalyuty-emercoin" class="bare">cryptor.net/kriptovalyuty/decentralizovannyy-alternativnyy-dns-na-osnove-kriptovalyuty-emercoin</a></p>
+</dd>
+<dt class="hdlist1">Bitfury Group и First Block Capital инвестируют в Emercoin для повышения безопасности и гибкости блокчейн-проектов</dt>
+<dd>
+<p><a href="https://cryptor.net/news/bitfury-group-i-first-block-capital-investiruyut-v-emercoin-dlya-povysheniya-bezopasnosti-i" class="bare">cryptor.net/news/bitfury-group-i-first-block-capital-investiruyut-v-emercoin-dlya-povysheniya-bezopasnosti-i</a></p>
+</dd>
+<dt class="hdlist1">Куда движется EmerCoin? Интервью с руководителем проекта - Евгением Шумиловым</dt>
+<dd>
+<p><a href="https://cryptor.net/persona-grata/kuda-dvizhetsya-emercoin-intervyu-s-rukovoditelem-proekta-evgeniem-shumilovym" class="bare">cryptor.net/persona-grata/kuda-dvizhetsya-emercoin-intervyu-s-rukovoditelem-proekta-evgeniem-shumilovym</a></p>
+</dd>
+<dt class="hdlist1">Emercoin продолжает налаживать сотрудничество с мировым блокчейн-сообществом</dt>
+<dd>
+<p><a href="https://cryptor.net/news/emercoin-prodolzhaet-nalazhivat-sotrudnichestvo-s-mirovym-blokcheyn-soobshchestvom-1583" class="bare">cryptor.net/news/emercoin-prodolzhaet-nalazhivat-sotrudnichestvo-s-mirovym-blokcheyn-soobshchestvom-1583</a></p>
+</dd>
+<dt class="hdlist1">Биржа OKEx добавила в листинг Emercoin, придав толчок развитию криптовалюты</dt>
+<dd>
+<p><a href="https://cryptor.net/news/birzha-okex-dobavila-v-listing-emercoin-pridav-tolchok-razvitiyu-kriptovalyuty-423" class="bare">cryptor.net/news/birzha-okex-dobavila-v-listing-emercoin-pridav-tolchok-razvitiyu-kriptovalyuty-423</a></p>
+</dd>
+<dt class="hdlist1">Как обновить EmerCoin кошелек на Raspberry Pi</dt>
+<dd>
+<p><a href="https://cryptor.net/tutorial/kak-obnovit-emercoin-koshelek-na-raspberry-pi" class="bare">cryptor.net/tutorial/kak-obnovit-emercoin-koshelek-na-raspberry-pi</a></p>
+</dd>
+<dt class="hdlist1">Фонд XTC Unicorn проинвестировал в Emercoin Blockchain</dt>
+<dd>
+<p><a href="https://cryptor.net/news/fond-xtc-unicorn-proinvestiroval-v-emercoin-blockchain-444" class="bare">cryptor.net/news/fond-xtc-unicorn-proinvestiroval-v-emercoin-blockchain-444</a></p>
+</dd>
+<dt class="hdlist1">Децентрализованная рекламная сеть emcLNX. Покупаем и продаем трафик за EmerCoin</dt>
+<dd>
+<p><a href="https://cryptor.net/tutorial/decentralizovannaya-reklamnaya-set-emclnx-pokupaem-i-prodaem-trafik-za-emercoin" class="bare">cryptor.net/tutorial/decentralizovannaya-reklamnaya-set-emclnx-pokupaem-i-prodaem-trafik-za-emercoin</a></p>
+</dd>
+<dt class="hdlist1">Как почистить блокчейн EmerCoin на Mac Os X</dt>
+<dd>
+<p><a href="https://cryptor.net/tutorial/kak-pochistit-blokcheyn-emercoin-na-mac-os-x" class="bare">cryptor.net/tutorial/kak-pochistit-blokcheyn-emercoin-na-mac-os-x</a></p>
+</dd>
+<dt class="hdlist1">EmerCoin изнутри: интервью с ведущим разработчиком криптовалюты</dt>
+<dd>
+<p><a href="https://cryptor.net/persona-grata/emercoin-iznutri-intervyu-s-vedushchim-razrabotchikom-kriptovalyuty" class="bare">cryptor.net/persona-grata/emercoin-iznutri-intervyu-s-vedushchim-razrabotchikom-kriptovalyuty</a></p>
+</dd>
+<dt class="hdlist1">Собственная инфраструктура открытых ключей на базе EmerCoin emcSSH</dt>
+<dd>
+<p><a href="https://cryptor.net/tutorial/sobstvennaya-infrastruktura-otkrytyh-klyuchey-na-baze-emercoin-emcssh" class="bare">cryptor.net/tutorial/sobstvennaya-infrastruktura-otkrytyh-klyuchey-na-baze-emercoin-emcssh</a></p>
+</dd>
+<dt class="hdlist1">Под капотом Emercoin</dt>
+<dd>
+<p><a href="https://cryptor.net/kriptovalyuty/pod-kapotom-emercoin" class="bare">cryptor.net/kriptovalyuty/pod-kapotom-emercoin</a></p>
+</dd>
+<dt class="hdlist1">Под капотом Emercoin. Часть 2. Децентрализованная нецензурируемая система доменных имён</dt>
+<dd>
+<p><a href="https://cryptor.net/kriptovalyuty/pod-kapotom-emercoin-chast-2-decentralizovannaya-necenzuriruemaya-sistema-domennyh" class="bare">cryptor.net/kriptovalyuty/pod-kapotom-emercoin-chast-2-decentralizovannaya-necenzuriruemaya-sistema-domennyh</a></p>
+</dd>
+<dt class="hdlist1">Под капотом Emercoin. Часть 3. emcSSH. Инфраструктура публичных ключей всемирного масштаба</dt>
+<dd>
+<p><a href="https://cryptor.net/kriptovalyuty/pod-kapotom-emercoin-chast-3-emcssh-infrastruktura-publichnyh-klyuchey-vsemirnogo" class="bare">cryptor.net/kriptovalyuty/pod-kapotom-emercoin-chast-3-emcssh-infrastruktura-publichnyh-klyuchey-vsemirnogo</a></p>
+</dd>
+</dl>
+</div>
+<div id="emerssl-article" class="dlist">
+<dl>
+<dt class="hdlist1">Под капотом Emercoin. Часть 4. emcSSL. Децентрализованная беспарольная система безопасности</dt>
+<dd>
+<p><a href="https://cryptor.net/kriptovalyuty/pod-kapotom-emercoin-chast-4-emcssl-decentralizovannaya-besparolnaya-sistema" class="bare">cryptor.net/kriptovalyuty/pod-kapotom-emercoin-chast-4-emcssl-decentralizovannaya-besparolnaya-sistema</a></p>
+</dd>
+<dt class="hdlist1">Система идентификации пользователей на основе криптовалюты EmerCoin</dt>
+<dd>
+<p><a href="https://cryptor.net/kriptovalyuty/sistema-identifikacii-polzovateley-na-osnove-kriptovalyuty-emercoin" class="bare">cryptor.net/kriptovalyuty/sistema-identifikacii-polzovateley-na-osnove-kriptovalyuty-emercoin</a></p>
+</dd>
+<dt class="hdlist1">Создаем ssl сертификат emcssl для авторизации на сайтах</dt>
+<dd>
+<p><a href="https://cryptor.net/tutorial/sozdaem-ssl-sertifikat-emcssl-dlya-avtorizacii-na-saytah" class="bare">cryptor.net/tutorial/sozdaem-ssl-sertifikat-emcssl-dlya-avtorizacii-na-saytah</a></p>
+</dd>
+<dt class="hdlist1">Российские разработчики из Bitfury и Emercoin создадут блокчейн-платформу для Госдепа США по заказу Coca-Cola</dt>
+<dd>
+<p><a href="https://cryptor.net/news/rossiyskie-razrabotchiki-iz-bitfury-i-emercoin-sozdadut-blokcheyn-platformu-dlya-gosdepa-ssha" class="bare">cryptor.net/news/rossiyskie-razrabotchiki-iz-bitfury-i-emercoin-sozdadut-blokcheyn-platformu-dlya-gosdepa-ssha</a></p>
+</dd>
+<dt class="hdlist1">EMCLNX – Пиринговая сеть обмена рекламными ссылками</dt>
+<dd>
+<p><a href="https://cryptor.net/kriptovalyuty/emclnx-piringovaya-set-obmena-reklamnymi-ssylkami" class="bare">cryptor.net/kriptovalyuty/emclnx-piringovaya-set-obmena-reklamnymi-ssylkami</a></p>
+</dd>
+<dt class="hdlist1">Децентрализованная технология блокчейна против ICANN: возможен ли конфликт?</dt>
+<dd>
+<p><a href="https://cryptor.net/obshchestvo/decentralizovannaya-tehnologiya-blokcheyna-protiv-icann-vozmozhen-li-konflikt" class="bare">cryptor.net/obshchestvo/decentralizovannaya-tehnologiya-blokcheyna-protiv-icann-vozmozhen-li-konflikt</a></p>
+</dd>
+<dt class="hdlist1">Авторизация с помощью клиентских emcSSL сертификатов. Часть 1. Готовим сервер</dt>
+<dd>
+<p><a href="https://cryptor.net/tutorial/avtorizaciya-s-pomoshchyu-klientskih-emcssl-sertifikatov-chast-1-gotovim-server" class="bare">cryptor.net/tutorial/avtorizaciya-s-pomoshchyu-klientskih-emcssl-sertifikatov-chast-1-gotovim-server</a></p>
+</dd>
+<dt class="hdlist1">Система доменных имен, которые невозможно разделегировать</dt>
+<dd>
+<p><a href="https://cryptor.net/obshchestvo/sistema-domennyh-imen-kotorye-nevozmozhno-razdelegirovat" class="bare">cryptor.net/obshchestvo/sistema-domennyh-imen-kotorye-nevozmozhno-razdelegirovat</a></p>
+</dd>
+<dt class="hdlist1">Блокчейн и сельское хозяйство. Интервью с первым в мире блокчейн-фермером</dt>
+<dd>
+<p><a href="https://cryptor.net/persona-grata/blokcheyn-i-selskoe-hozyaystvo-intervyu-s-pervym-v-mire-blokcheyn-fermerom" class="bare">cryptor.net/persona-grata/blokcheyn-i-selskoe-hozyaystvo-intervyu-s-pervym-v-mire-blokcheyn-fermerom</a></p>
+</dd>
+<dt class="hdlist1">Подключаем сайт на WordPress к системе Authorizer</dt>
+<dd>
+<p><a href="https://cryptor.net/tutorial/podklyuchaem-sayt-na-wordpress-k-sisteme-authorizer" class="bare">cryptor.net/tutorial/podklyuchaem-sayt-na-wordpress-k-sisteme-authorizer</a></p>
+</dd>
+<dt class="hdlist1">Генерация emcSSL сертификата online</dt>
+<dd>
+<p><a href="https://cryptor.net/tutorial/generaciya-emcssl-sertifikata-online" class="bare">cryptor.net/tutorial/generaciya-emcssl-sertifikata-online</a></p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_статьи_habr">5.2.3. Статьи habr</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Лекции по криптографии, блокчейну и вообще</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/emercoin/articles/339204/" class="bare">habr.com/ru/companies/emercoin/articles/339204/</a></p>
+</dd>
+<dt class="hdlist1">EMC DPO: как защитить свои товары от подделок</dt>
+<dd>
+<p><a href="https://habr.com/ru/post/322696/" class="bare">habr.com/ru/post/322696/</a></p>
+</dd>
+<dt class="hdlist1">Погружение в технологию блокчейн: Секреты EmerCoin</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/microsoft/articles/311690/" class="bare">habr.com/ru/companies/microsoft/articles/311690/</a></p>
+</dd>
+<dt class="hdlist1">Emercoin vs Ethereum и сравнение приватных и публичных блокчейнов</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/hashflare/articles/370193/" class="bare">habr.com/ru/companies/hashflare/articles/370193/</a></p>
+</dd>
+<dt class="hdlist1">Microsoft, ООН и EmerCoin: использование технологии блокчейн в реальных проектах</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/microsoft/articles/310812/" class="bare">habr.com/ru/companies/microsoft/articles/310812/</a></p>
+</dd>
+<dt class="hdlist1">Равертывание Emercoin blockchain с веб-кошельком на RedHat/CentOS 7 и Ubuntu 16.04</dt>
+<dd>
+<p><a href="https://habr.com/ru/articles/304100/" class="bare">habr.com/ru/articles/304100/</a></p>
+</dd>
+<dt class="hdlist1">«Авторайзер»: беспарольная децентрализованная авторизация через OAuth 2.0 на блокчейне Emercoin</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/hashflare/articles/370225/" class="bare">habr.com/ru/companies/hashflare/articles/370225/</a></p>
+</dd>
+<dt class="hdlist1">Сервисы Emercoin будут доступны на Microsoft Azure</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/hashflare/articles/389249/" class="bare">habr.com/ru/companies/hashflare/articles/389249/</a></p>
+</dd>
+<dt class="hdlist1">Eggs Datacenter: как Emercoin позволил реализовать идею распределённого дата-центра на блокчейне</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/emercoin/articles/338572/" class="bare">habr.com/ru/companies/emercoin/articles/338572/</a></p>
+</dd>
+<dt class="hdlist1">Свободен ото всех оков: Emercoin версии 6.2 стал полностью децентрализованным</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/emercoin/articles/327988/" class="bare">habr.com/ru/companies/emercoin/articles/327988/</a></p>
+</dd>
+<dt class="hdlist1">Стоимость Emercoin достигла исторического максимума</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/hashflare/articles/403933/" class="bare">habr.com/ru/companies/hashflare/articles/403933/</a></p>
+</dd>
+<dt class="hdlist1">Цифровой нотариус на блокчейне: Emercoin DPO Antifake</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/hashflare/articles/402151/" class="bare">habr.com/ru/companies/hashflare/articles/402151/</a></p>
+</dd>
+<dt class="hdlist1">EMCSSL – Система идентификации пользователей WWW на основе подсистемы NVS криптовалюты EmerCoin и децентрализованных клиентских SSL-сертификатов</dt>
+<dd>
+<p><a href="https://habr.com/ru/articles/257605/" class="bare">habr.com/ru/articles/257605/</a></p>
+</dd>
+<dt class="hdlist1">Разворачиваем Emercoin testnet и получаем много бесплатных монет</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/emercoin/articles/335338/" class="bare">habr.com/ru/companies/emercoin/articles/335338/</a></p>
+</dd>
+<dt class="hdlist1">Emercoin снизит комиссии на транзакции в 100 раз</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/emercoin/articles/335630/" class="bare">habr.com/ru/companies/emercoin/articles/335630/</a></p>
+</dd>
+<dt class="hdlist1">Вебкошелек Emercoin One — безопасен настолько, насколько возможно</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/emercoin/articles/341970/" class="bare">habr.com/ru/companies/emercoin/articles/341970/</a></p>
+</dd>
+<dt class="hdlist1">Как начать работать с блокчейном Emer</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/emercoin/articles/329632/" class="bare">habr.com/ru/companies/emercoin/articles/329632/</a></p>
+</dd>
+<dt class="hdlist1">EMC DPO: как защитить свои товары от подделок</dt>
+<dd>
+<p><a href="https://habr.com/ru/articles/322696/" class="bare">habr.com/ru/articles/322696/</a></p>
+</dd>
+<dt class="hdlist1">Развертывание сервера ElectrumX</dt>
+<dd>
+<p><a href="https://habr.com/ru/articles/345222/" class="bare">habr.com/ru/articles/345222/</a></p>
+</dd>
+<dt class="hdlist1">Погружение в технологию блокчейн: Децентрализованная нецензурированная система доменных имён</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/microsoft/articles/314368/" class="bare">habr.com/ru/companies/microsoft/articles/314368/</a></p>
+</dd>
+<dt class="hdlist1">Криптовалюта Эмеркоин: монета как технологичная платформа для различных сервисов</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/hashflare/articles/387773/" class="bare">habr.com/ru/companies/hashflare/articles/387773/</a></p>
+</dd>
+<dt class="hdlist1">Погружение в технологию блокчейн: Децентрализованная беспарольная система безопасности</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/microsoft/articles/316864/" class="bare">habr.com/ru/companies/microsoft/articles/316864/</a></p>
+</dd>
+<dt class="hdlist1">Погружение в технологию блокчейн: Инфраструктура публичных ключей всемирного масштаба</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/microsoft/articles/316326/" class="bare">habr.com/ru/companies/microsoft/articles/316326/</a></p>
+</dd>
+<dt class="hdlist1">Authorizer: децентрализованная авторизация emcSSL заработает с oAuth 2.0</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/hashflare/articles/373025/" class="bare">habr.com/ru/companies/hashflare/articles/373025/</a></p>
+</dd>
+<dt class="hdlist1">Emcssh – простое управление цифровыми ключами</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/hashflare/articles/385099/" class="bare">habr.com/ru/companies/hashflare/articles/385099/</a></p>
+</dd>
+<dt class="hdlist1">«Эмеркоин» подключился к F2Pool</dt>
+<dd>
+<p><a href="https://habr.com/ru/companies/hashflare/articles/403845/" class="bare">habr.com/ru/companies/hashflare/articles/403845/</a></p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_other">5.2.4. Other</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Emercoin — инфраструктурные сервисы на блокчейне</dt>
+<dd>
+<p><a href="https://bits.media/emercoin-infrastrukturnye-servisy-na-blokcheyne/" class="bare">bits.media/emercoin-infrastrukturnye-servisy-na-blokcheyne/</a></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_en_2">5.3. EN</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Emercoin: The cryptocurrency caught between the old school and modern age</dt>
+<dd>
+<p><a href="https://www.coin-report.net/en/emercoin/" class="bare">www.coin-report.net/en/emercoin/</a></p>
+</dd>
+<dt class="hdlist1">10 most common questions (and answers) about Emercoin</dt>
+<dd>
+<p><a href="https://emercoin.com/en/news/10-most-common-questions-and-answers-about-emercoin/" class="bare">emercoin.com/en/news/10-most-common-questions-and-answers-about-emercoin/</a></p>
+</dd>
+<dt class="hdlist1">Emercoin: Setting the New Standard for Top Blockchains</dt>
+<dd>
+<p><a href="https://news.bitcoin.com/emercoin-setting-the-new-standard-for-top-blockchains/" class="bare">news.bitcoin.com/emercoin-setting-the-new-standard-for-top-blockchains/</a></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="mining.html">Mining</a> | ↑ Up: <a href="index.html">Emercoin</a> | Next: <a href="other.html">Other</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2023-04-28 19:06:14 +0300
+</div>
+</div>
+</body>
+</html>

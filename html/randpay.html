@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.18">
+<link rel="icon" type="image/png" href="images/favicon-32x32.png">
+<title>Emercoin</title>
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+
+@import url(//fonts.googleapis.com/css?family=Noto+Sans);
+@import url(https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css); /* Default asciidoc style framework - important */
+
+/* CUSTOMISATIONS */
+/* Change the values in root for quick customisation. If you want even more fine grain... venture further. */
+:root{
+--maincolor:#282c34;
+--primarycolor:#f39c12;
+--secondarycolor:#03a9f4;
+--tertiarycolor:#4db6ac;
+--sidebarbackground:#21252b;
+--linkcolor:#f44336;
+--linkcoloralternate:#ff9800;
+--white:#FFFFFF;
+}
+
+/* Text styles */
+
+body{font-family: "Noto Sans",sans-serif;background-color: var(--maincolor);color:var(--white);}
+
+h1{color:var(--primarycolor) !important;font-family:"Noto Sans",sans-serif;}
+h2,h3,h4,h5,h6{color:var(--secondarycolor) !important;font-family:"Noto Sans",sans-serif;}
+.title{color:var(--white) !important;font-family:"Noto Sans",sans-serif;font-style: normal; font-weight: normal;}
+p{font-family: "Noto Sans",sans-serif ! important}
+#toc.toc2 a:link{color:var(--linkcolor);}
+blockquote{color:var(--tertiarycolor) !important}
+.quoteblock{color:var(--white)}
+code{color:var(--linkcoloralternate);background-color: var(--sidebarbackground) !important}
+
+
+/* Table styles */
+th{background-color: var(--maincolor);color:var(--white) !important;}
+td{background-color: var(--maincolor);color: var(--linkcoloralternate) !important}
+
+
+#toc.toc2{background-color:var(--sidebarbackground);}
+#toctitle{color:var(--white);}
+
+/* Responsiveness fixes */
+video {
+  max-width: 100%;
+}
+
+@media all and (max-width: 600px) {
+  table {
+    width: 55vw!important;
+    font-size: 3vw;
+  }
+}
+
+.exampleblock > .content {
+  background-color: var(--maincolor);
+}
+
+a {
+  color: var(--secondarycolor);
+}
+
+.admonitionblock td.icon .icon-tip::before {
+  text-shadow: none;
+  color: var(--white);
+}
+.admonitionblock td.icon .icon-note::before {
+  color: var(--tertiarycolor);
+}
+.admonitionblock td.icon .icon-important::before {
+  color: var(--linkcolor);
+}
+/*.admonitionblock td.icon .icon-caution::before {
+  color: var(--linkcoloralternate);
+}*/
+.admonitionblock td.icon .icon-warning::before {
+  color: var(--primarycolor);
+}
+
+#preamble > .sectionbody > .paragraph:first-of-type p {
+  color: var(--white);
+}
+
+.quoteblock blockquote::before {
+  color: var(--primarycolor);
+}
+.quoteblock .attribution cite, .verseblock .attribution cite {
+  color: var(--white);
+}
+.verseblock pre {
+  color: var(--white);
+}
+.quoteblock blockquote, .quoteblock blockquote p {
+  color: var(--white);
+}
+
+.sidebarblock {
+  background: var(--sidebarbackground);
+}
+.literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
+  background: var(--sidebarbackground);
+  color: var(--white);
+}
+
+#header .details {
+  color: var(--white);
+}
+#header .details span.email a {
+  color: var(--linkcoloralternate);
+}
+
+
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#37375b}
+
+</style>
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="randpay" class="article">
+<div id="header">
+<h1>Emercoin</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Содержание</div>
+<p><span class="toc-root"><a href="index.html">Emercoin</a></span></p><ul class="sectlevel1">
+<li><a href="installation.html">1. Installation</a>
+</li>
+<li><a href="nvs_subsystems.html">2. NVS и его подсистемы</a>
+</li>
+<li><a href="randpay.html"><span class="toc-current">3. RandPay</span></a>
+<ul class="sectlevel2">
+<li><a href="randpay.html#_документация_в_pdf">3.1. Документация в PDF</a>
+</li>
+</ul>
+</li>
+<li><a href="mining.html">4. Mining</a>
+</li>
+<li><a href="articles.html">5. Статьи</a>
+</li>
+<li><a href="other.html">6. Other</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="randpay">3. RandPay</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Randpay</strong> - высокомасштабируемая подсистема микроплатежей криптовалюты Emercoin.</p>
+</div>
+<div class="paragraph">
+<p>Она позволяет проводить тысячи платажей в секунду, или триллионы в год.</p>
+</div>
+<div class="paragraph">
+<p>Применима для систем EoT (Economy of Things), которые являются следующим шагом развития IoT (Internet of Things).</p>
+</div>
+<div class="paragraph">
+<p>Randpay не имеет внутреннего состояния, то есть финансовое взаимодействие может начаться без предварительного установления взамоотношений, и завершиться в любой момент, при этом завершение будет корректно.</p>
+</div>
+<div class="paragraph">
+<p>Это удобно в ненадёжном сетевом окружении или при эпизодических платежах.</p>
+</div>
+<div class="sect2">
+<h3 id="_документация_в_pdf">3.1. <a href="https://emercoin.com/media/Randpay%20Whitepaper%20RU%20.pdf">Документация в PDF</a></h3>
+
+</div>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="nvs_subsystems.html">NVS и его подсистемы</a> | ↑ Up: <a href="index.html">Emercoin</a> | Next: <a href="mining.html">Mining</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2023-04-28 19:06:14 +0300
+</div>
+</div>
+</body>
+</html>
