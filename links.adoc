@@ -59,3 +59,4 @@
 :file-validator-windows: https://stackoverflow.com/questions/12870880/run-php-file-in-windows-command-prompt-cmd
 :proof-of-stake: https://ru.wikipedia.org/wiki/Доказательство_доли_владения
 :utxo: https://en.wikipedia.org/wiki/Unspent_transaction_output
+:emer-stats: https://explorer.emercoin.com/stats
