@@ -116,7 +116,15 @@ make -j 4
 -zapwallettxes
 ----
 
-.GetBoolArg
+
+GetBoolArg
+
+
+----
+-testnet
+----
+.Use the test chain
+
 ----
 -acceptnonstdtxn
 -alerts
@@ -186,7 +194,6 @@ make -j 4
 -stdin
 -stopafterblockimport
 -sysperms
--testnet
 -testsafemode
 -tor
 -txid
