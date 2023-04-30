@@ -1,3 +1,5 @@
+include::../links.adoc[]
+
 === Создание TLSA записи
 
 Сгененерировать запись можно утилитой {hash-slinger}[hash-slinger] или на одном из многочисленных онлайн сервисов. Например на этом https://ssl-tools.net/tlsa-generator
