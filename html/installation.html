@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.18">
+<meta name="generator" content="Asciidoctor 2.0.20">
 <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 <title>Emercoin</title>
 <style>
@@ -136,6 +136,8 @@ a {
 <ul class="sectlevel2">
 <li><a href="installation.html#_сборка_из_исходных_кодов">1.1. Сборка из исходных кодов</a>
 </li>
+<li><a href="installation.html#_emercoin_conf">1.2. Emercoin.conf</a>
+</li>
 </ul>
 </li>
 <li><a href="nvs_subsystems.html">2. NVS и его подсистемы</a>
@@ -156,7 +158,7 @@ a {
 <h2 id="installation">1. Installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Бинарные версии для вашей платформы можно скачать {emercoin-github}[здесь].</p>
+<p>Бинарные версии для вашей платформы можно скачать <a href="https://github.com/emercoin/emercoin/releases/">здесь</a>.</p>
 </div>
 <div class="paragraph">
 <p>Arch Linux:</p>
@@ -198,6 +200,268 @@ make -j 4</pre>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_emercoin_conf">1.2. Emercoin.conf</h3>
+<div class="listingblock">
+<div class="title">Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</div>
+<div class="content">
+<pre>-rpcconnect=&lt;ip&gt;</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Connect to JSON-RPC on &lt;port&gt; (default: 6662 or testnet: 6662)</div>
+<div class="content">
+<pre>-rpcport=&lt;port&gt;</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Username for JSON-RPC connections</div>
+<div class="content">
+<pre>-rpcuser=&lt;user&gt;</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Password for JSON-RPC connections</div>
+<div class="content">
+<pre>-rpcpassword=&lt;pw&gt;</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Timeout during HTTP requests (default: 900)</div>
+<div class="content">
+<pre>-rpcclienttimeout=&lt;n&gt;</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Specify configuration file (default: emercoin.conf)</div>
+<div class="content">
+<pre>-conf=&lt;file&gt;</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Specify data directory</div>
+<div class="content">
+<pre>-datadir=&lt;dir&gt;</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Алгоритм сортировки используемых UTXO при генерации транзакции. 0 - cлучайное перемешивание, 1 - сортировка по времени вылёживания (свежие раньше).</div>
+<div class="content">
+<pre>-sortir</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Разбиение выхода транзакции при PoS. 0&#8201;&#8212;&#8201;не разбивать. 1&#8201;&#8212;&#8201;разбиение примерно пополам (default).-1&#8201;&#8212;&#8201;Разбиение на основное тело и награду. Если транзакция на 1000 emc, прошла через POS, заработала 60EMC. Разбиение будет на 1000 и 60.</div>
+<div class="content">
+<pre>-splitpos</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Set the proxy server. If SOCKS5 is selected (default), this proxy server will be used to try to reach .onion addresses as well. You need to use -noonion or -onion=0 to explicitly disable     outbound access to onion services.</div>
+<div class="content">
+<pre>-proxy=ip:port</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Set the proxy server to use for Tor onion services. You do not need to set this if it&#8217;s the same as -proxy. You can use -onion=0 to explicitly disable access to onion services.</div>
+<div class="content">
+<pre>-onion=ip:port</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">When using -proxy, listening is disabled by default. If you want to manually configure an onion service (see section 3), you&#8217;ll need to enable it explicitly.</div>
+<div class="content">
+<pre>-listen</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>GetBoolArg</p>
+</div>
+<div class="listingblock">
+<div class="title">Use the test chain</div>
+<div class="content">
+<pre>-testnet</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Pass named instead of positional arguments (default: false)</div>
+<div class="content">
+<pre>-named</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Wait for RPC server to start</div>
+<div class="content">
+<pre>-rpcwait</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Read extra arguments from standard input, one per line until EOF/Ctrl-D (recommended for sensitive information such as passphrases)</div>
+<div class="content">
+<pre>-stdin</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development</div>
+<div class="content">
+<pre>-regtest</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>-acceptnonstdtxn
+-alerts
+-allowselfsignedrootcertificates
+-benchmark
+-blocksonly
+-checkblockindex
+-checkpoints
+-create
+-daemon
+-datacarrier
+-debugnet
+-disablewallet
+-discover
+-dns
+-dnsseed
+-emcdns
+-exchtest
+-feefilter
+-flushwallet
+-forcednsseed
+-gen
+-help-debug
+-json
+-legacyrpc
+-listenonion
+-logips
+-logtimemicros
+-logtimestamps
+-mempoolreplacement
+-min
+-nameaddress
+-nodebug
+-peerbloomfilters
+-permitbaremultisig
+-prematurewitness
+-printcoinage
+-printcoinstake
+-printcreation
+-printfee
+-printpriority
+-printselectcoin
+-printstakemodifier
+-printtoconsole
+-privdb
+-proxyrandomize
+-prune
+-reindex
+-reindex-chainstate
+-relaypriority
+-rescan
+-rest
+-rpcssl
+-salvagewallet
+-server
+-shrinkdebugfile
+-spendzeroconfchange
+-splash
+-stakegen
+-stopafterblockimport
+-sysperms
+-testsafemode
+-tor
+-txid
+-txindex
+-upgradewallet
+-upnp
+-usehd
+-walletbroadcast
+-walletprematurewitness
+-walletrbf
+-walletrejectlongchains
+-whitelistalwaysrelay
+-whitelistforcerelay
+-whitelistrelay
+-zapwallettxes</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">GetArg</div>
+<div class="content">
+<pre>-adjustexch
+-assumevalid
+-banscore
+-bantime
+-blockmaxsize
+-blockmaxweight
+-blockmintxfee
+-blockprioritysize
+-blockreconstructionextratxn
+-blockversion
+-bytespersigop
+-changeaddress
+-checkblocks
+-checklevel
+-checkpointdepth
+-checkpointnode
+-checkpointpubkey
+-checkpointslots
+-dapsize
+-daptreshold
+-datacarriersize
+-dbcache
+-dblogsize
+-dustrelayfee
+-emcdnsallowed
+-emcdnsbindip
+-emcdnslocalcf
+-emcdnsport
+-emcdnssuffix
+-emcdnsverbose
+-enumtollfree
+-enumtrust
+-genproclimit
+-incrementalrelayfee
+-keypool
+-limitancestorcount
+-limitancestorsize
+-limitdescendantcount
+-limitdescendantsize
+-limitfreerelay
+-maxconnections
+-maxdp
+-maxmempool
+-maxreceivebuffer
+-maxsendbuffer
+-maxtipage
+-maxtxfee
+-maxuploadtarget
+-mempoolexpiry
+-minrelaytxfee
+-mocktime
+-modcache
+-nameindexchainsize
+-onion
+-par
+-paytxfee
+-port
+-posprotect
+-promiscuousmempoolflags
+-prune
+-randkeymapsz
+-reservebalance
+-rpcserialversion
+-rpcservertimeout
+-staketimio
+-stunsrcport
+-timeout
+-torcontrol
+-txconfirmtarget
+-uiplatform</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="paragraph nav-footer">
@@ -206,7 +470,7 @@ make -j 4</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-29 19:51:56 +0300
+Last updated 2023-04-30 18:20:56 +0300
 </div>
 </div>
 </body>

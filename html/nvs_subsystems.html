@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.18">
+<meta name="generator" content="Asciidoctor 2.0.20">
 <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 <title>Emercoin</title>
 <style>
@@ -168,9 +168,11 @@ a {
 </li>
 <li><a href="nvs_subsystems.html#_создание_записей_dns">2.1.4. Создание записей DNS</a>
 <ul class="sectlevel4">
-<li><a href="nvs_subsystems.html#_создание_записей_через_cli">Создание записей через CLI</a>
+<li><a href="nvs_subsystems.html#_через_cli">Через CLI</a>
 </li>
-<li><a href="nvs_subsystems.html#_создание_записей_через_gui">Создание записей через GUI</a>
+<li><a href="nvs_subsystems.html#_через_gui">Через GUI</a>
+</li>
+<li><a href="nvs_subsystems.html#_для_тестирования">Для тестирования</a>
 </li>
 </ul>
 </li>
@@ -270,10 +272,10 @@ a {
 <h2 id="nvs_subsystems">2. NVS и его подсистемы</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Emercoin предоставляет сервис для хранения пар имя &#8594; значение в своей цепочке блоков Name-Value Storage или NVS. Первоначальная концепция была унаследована от криптовалюты {namecoin}[NameCoin], но в то время как NameCoin в основном ориентирована на поддержку децентрализованной доменной зоны .bit в своем расширении, Emercoin предоставляет универсальный расширяемый сервис для хранения и поддержки пар имя &#8594; значение без навязывания узкой специализации.</p>
+<p>Emercoin предоставляет сервис для хранения пар имя &#8594; значение в своей цепочке блоков Name-Value Storage или NVS. Первоначальная концепция была унаследована от криптовалюты <a href="https://namecoin.info">NameCoin</a>, но в то время как NameCoin в основном ориентирована на поддержку децентрализованной доменной зоны .bit в своем расширении, Emercoin предоставляет универсальный расширяемый сервис для хранения и поддержки пар имя &#8594; значение без навязывания узкой специализации.</p>
 </div>
 <div class="paragraph">
-<p>Конечно, Emercoin также поддерживает {alt-dns-root}[распределенную альтернативную службу DNS], и каждый кошелек Emercoin содержит встроенный простой DNS-сервер, поддерживающий стандартный протокол DNS {rfc1034}[RFC1034] UDP.</p>
+<p>Конечно, Emercoin также поддерживает <a href="https://en.wikipedia.org/wiki/Alternative_DNS_root">распределенную альтернативную службу DNS</a>, и каждый кошелек Emercoin содержит встроенный простой DNS-сервер, поддерживающий стандартный протокол DNS <a href="https://www.ietf.org/rfc/rfc1034.txt">RFC1034</a> UDP.</p>
 </div>
 <h3 id="_обзор_nvs" class="discrete">Обзор NVS</h3>
 <div class="paragraph">
@@ -290,10 +292,10 @@ a {
 </ul>
 </div>
 <div class="paragraph">
-<p>Emercoin выделяет до 20 КБ для каждого имени, что достаточно для размещения открытых ключей для большинства современных криптографических приложений. Мы считаем, что блокчейн криптовалюты является чрезвычайно надежным местом для публикации и поддержки открытых ключей для многих криптографических приложений, таких как сертификаты SSH/SSL. Как и обычные платежные транзакции, пары NVS, хранящиеся в блокчейне, также получают подтверждения во время генерации блока и практически неуязвимы для изменения в результате {атака-посредника}[Атаки Посредника].</p>
+<p>Emercoin выделяет до 20 КБ для каждого имени, что достаточно для размещения открытых ключей для большинства современных криптографических приложений. Мы считаем, что блокчейн криптовалюты является чрезвычайно надежным местом для публикации и поддержки открытых ключей для многих криптографических приложений, таких как сертификаты SSH/SSL. Как и обычные платежные транзакции, пары NVS, хранящиеся в блокчейне, также получают подтверждения во время генерации блока и практически неуязвимы для изменения в результате <a href="https://ru.wikipedia.org/wiki/%D0%90%D1%82%D0%B0%D0%BA%D0%B0_%D0%BF%D0%BE%D1%81%D1%80%D0%B5%D0%B4%D0%BD%D0%B8%D0%BA%D0%B0">Атаки Посредника</a>.</p>
 </div>
 <div class="paragraph">
-<p>Поскольку блокчейн является надежным хранилищем данных, защищенным от несанкционированного изменения, он является отличной основой для развертывания криптографической {pki}[Public Key Infrastructure] (PKI), цифрового подтверждения владения (DPO), неизменяемого ведения записей, временных меток и других распределенных сервисов.</p>
+<p>Поскольку блокчейн является надежным хранилищем данных, защищенным от несанкционированного изменения, он является отличной основой для развертывания криптографической <a href="https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%84%D1%80%D0%B0%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0_%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D1%85_%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B9">Public Key Infrastructure</a> (PKI), цифрового подтверждения владения (DPO), неизменяемого ведения записей, временных меток и других распределенных сервисов.</p>
 </div>
 <div class="paragraph">
 <p>Блокчейн Emercoin будет принимать пары NVS без каких-либо ограничений на формат данных имени или значения. Однако в целях стандартизации мы рекомендуем следующий формат имен:</p>
@@ -349,7 +351,7 @@ a {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">KX</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{rfc2230}[RFC2230] публичные ключи</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://tools.ietf.org/html/rfc2230">RFC2230</a> публичные ключи</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -499,10 +501,10 @@ a {
 <div class="ulist">
 <ul>
 <li>
-<p>Расширение 44 браузера Peername.com (Firefox, Chrome, Opera) {peername}[]</p>
+<p>Расширение 44 браузера Peername.com (Firefox, Chrome, Opera) <a href="https://peername.com" class="bare">peername.com</a></p>
 </li>
 <li>
-<p>Расширение для браузера friGate (Firefox, Chrome, Opera) {fri-gate}[]</p>
+<p>Расширение для браузера friGate (Firefox, Chrome, Opera) <a href="https://fri-gate.org" class="bare">fri-gate.org</a></p>
 </li>
 </ul>
 </div>
@@ -510,19 +512,19 @@ a {
 <div class="sect4">
 <h5 id="_opennic">OpenNIC</h5>
 <div class="paragraph">
-<p>{opennic}[OpenNIC] - это альтернативный реестр доменных имён, который позволяет пользователям получить доступ к веб-сайтам, находящимся за пределами традиционных доменных зон, таких как .com или .org. OpenNIC не зависит от ICANN и предоставляет простой и удобный способ доступа к веб-ресурсам, которые могут быть заблокированы в некоторых странах или регионах.</p>
+<p><a href="https://www.opennic.org">OpenNIC</a> - это альтернативный реестр доменных имён, который позволяет пользователям получить доступ к веб-сайтам, находящимся за пределами традиционных доменных зон, таких как .com или .org. OpenNIC не зависит от ICANN и предоставляет простой и удобный способ доступа к веб-ресурсам, которые могут быть заблокированы в некоторых странах или регионах.</p>
 </div>
 <div class="paragraph">
-<p>Благодаря соглашению между Emercoin и OpenNIC, пользователи DNS-серверов OpenNIC могут получить доступ к доменным зонам Emercoin. Для этого необходимо настроить DNS-преобразователь для серверов OpenNIC, следуя {opennic-wiki}[инструкциям]. Таким образом, вы можете получить доступ к веб-сайтам, зарегистрированным в блокчейне Emercoin, а также к другим доменным зонам, поддерживаемым OpenNIC.</p>
+<p>Благодаря соглашению между Emercoin и OpenNIC, пользователи DNS-серверов OpenNIC могут получить доступ к доменным зонам Emercoin. Для этого необходимо настроить DNS-преобразователь для серверов OpenNIC, следуя <a href="https://wiki.opennic.org/doku.php">инструкциям</a>. Таким образом, вы можете получить доступ к веб-сайтам, зарегистрированным в блокчейне Emercoin, а также к другим доменным зонам, поддерживаемым OpenNIC.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_настройка_в_windows">Настройка в Windows</h5>
 <div class="paragraph">
-<p>Пример настройки DNS в Windows, вы можете посмотреть {windows-set-dns}[здесь].</p>
+<p>Пример настройки DNS в Windows, вы можете посмотреть <a href="http://maxima-library.org/forum/dobro-pozhalovat/2543-chtoby-ne-poteryatsya-obrashchenie-k-chitatelyam#48455">здесь</a>.</p>
 </div>
 <div class="paragraph">
-<p>Windows начиная с версии 10 поддерживает DoT и DoH. Пример настройки {windows-set-doh-dot}[здесь].</p>
+<p>Windows начиная с версии 10 поддерживает DoT и DoH. Пример настройки <a href="https://www.bleepingcomputer.com/news/microsoft/how-to-enable-dns-over-https-doh-in-windows-10/">здесь</a>.</p>
 </div>
 <div class="paragraph">
 <p>Чтобы настроить DNS over TLS через графический интерфейс, выполните следующие действия:</p>
@@ -537,7 +539,7 @@ a {
 <p>Android поддерживает DNS over TLS без установки каких либо приложений. Это значит что вы можете получить доступ к зонам EmerDNS просто вписав адрес DNS сервера (Opennic или частного DNS сервера)</p>
 </div>
 <div class="paragraph">
-<p>{android-set-dot}[Инструкция по настройке]</p>
+<p><a href="https://simpledns.plus/kb/198/how-to-enable-dns-over-tls-dot-in-android">Инструкция по настройке</a></p>
 </div>
 </div>
 <div class="sect4">
@@ -677,7 +679,7 @@ a {
 <div class="sect4">
 <h5 id="_интернационализированные_доменные_имена">Интернационализированные доменные имена</h5>
 <div class="paragraph">
-<p>{idn}[Интернационализированные доменные имена] (арабский, китайский, кириллица и т. Д.) Технически возможны с использованием {punycode}[punycode].</p>
+<p><a href="https://ru.wikipedia.org/wiki/IDN">Интернационализированные доменные имена</a> (арабский, китайский, кириллица и т. Д.) Технически возможны с использованием <a href="https://ru.wikipedia.org/wiki/Punycode">punycode</a>.</p>
 </div>
 <div class="paragraph">
 <p>Например, если нам нужно следующее интернационализированное доменное имя:</p>
@@ -688,7 +690,7 @@ a {
 </div>
 </div>
 <div class="paragraph">
-<p>Затем мы должны расшифровать его с помощью {punycode-charset}[конвертера punycode] и зарегистрировать результат:</p>
+<p>Затем мы должны расшифровать его с помощью <a href="https://www.charset.org/punycode">конвертера punycode</a> и зарегистрировать результат:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -936,7 +938,7 @@ a {
 <p>Создать запись вы можете двумя способами, первый это через CLI  и второй через GUI кошелька.</p>
 </div>
 <div class="sect4">
-<h5 id="_создание_записей_через_cli">Создание записей через CLI</h5>
+<h5 id="_через_cli">Через CLI</h5>
 <div class="paragraph">
 <p>Для создания записи через CLI вы можете воспользоваться утилитой:</p>
 </div>
@@ -982,7 +984,7 @@ a {
 </div>
 </div>
 <div class="sect4">
-<h5 id="_создание_записей_через_gui">Создание записей через GUI</h5>
+<h5 id="_через_gui">Через GUI</h5>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1012,11 +1014,67 @@ a {
 </ol>
 </div>
 </div>
+<div class="sect4">
+<h5 id="_для_тестирования">Для тестирования</h5>
+<div class="paragraph">
+<p>Так как записи которые помещаются в БЧ невозможно удалить, рекомендуется для минимизации захламления БЧ
+использовать либо сеть testnet, либо локальный файл конфигурации.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Тестовая сеть (testnet)</dt>
+<dd>
+<p>Для создания записей в тестовой сети смотрите статьи <a href="articles.html#art_testnet_medium">один</a>, <a href="articles.html#art_testnet_habr">два</a></p>
+</dd>
+<dt class="hdlist1">Локально через файл конфигурации</dt>
+<dd>
+<p>Для быстрого тестирования записей встроенного DNS сервера, можно вообще не создавать записи в БЧ. Записи можно прописать в конфигурационных файлах. Формат записей:</p>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;domain&gt;=&lt;dns_record&gt;=&lt;value&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Создайте в каталоге вашего кошелька файл <code>emcdnslocal.conf</code>, добавьте в него записи для домена который вы хотите протестировать:</p>
+</div>
+<div class="listingblock">
+<div class="title">emcdnslocal.conf</div>
+<div class="content">
+<pre>wg0.lib=A=5.255.97.202|AAAA=2a04:52c0:102:62d6::babe:cafe|MX=mail.wg0.lib
+mail.wg0.lib=A=5.255.97.202</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Откройте файл конфигурации вашего кошелька и добавьте следующую строку:</p>
+</div>
+<div class="listingblock">
+<div class="title">emercoin.conf</div>
+<div class="content">
+<pre>...
+emcdnslocalcf=./emcdnslocal.conf
+...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Перезагрузите сервис кошелька и попробуйте отправить запрос на разрешение добавленных имен:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>dig wg0.lib mx
+...
+dig mail.wg0.lib A
+...</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_интеграция_в_обычное_дерево_dns">2.1.5. Интеграция в обычное дерево DNS</h4>
 <div class="paragraph">
-<p>Во-первых, нужно активировать {rfc1034}[RFC1034] сервер DNS в Emercoin по задав два необязательных параметра в emercoin.conf конфигурационном файле, emcdns и emcdnsport :</p>
+<p>Во-первых, нужно активировать <a href="https://www.ietf.org/rfc/rfc1034.txt">RFC1034</a> сервер DNS в Emercoin по задав два необязательных параметра в emercoin.conf конфигурационном файле, emcdns и emcdnsport :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1030,7 +1088,7 @@ emcdnsport=NNN # Порт для DNS, по умолчанию 5335</pre>
 <div class="sect4">
 <h5 id="_unbound_dns_server">Unbound DNS Server</h5>
 <div class="paragraph">
-<p>Пример конфигурации для настройки DNS сервера {unbound}[Unbound]:</p>
+<p>Пример конфигурации для настройки DNS сервера <a href="https://nlnetlabs.nl/projects/unbound/about/">Unbound</a>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1080,10 +1138,10 @@ forward-zone:
 <div class="sect4">
 <h5 id="_обычный_pc_компьютер_acrylic_dns_прокси">Обычный PC компьютер, Acrylic DNS-прокси</h5>
 <div class="paragraph">
-<p>Самый простой случай - запустить кошелек Emercoin и все остальное на одном ПК. Для этого мы рекомендуем установить на ваш компьютер облегченный {acrylic-dns}[прокси-сервер Acrylic DNS]. Acrylic улучшит производительность вашего ПК, разрешая DNS-запросы с локальным кешем, уменьшая задержки при просмотре или любой другой интернет-активности.</p>
+<p>Самый простой случай - запустить кошелек Emercoin и все остальное на одном ПК. Для этого мы рекомендуем установить на ваш компьютер облегченный <a href="http://mayakron.altervista.org/support/acrylic/Home.htm">прокси-сервер Acrylic DNS</a>. Acrylic улучшит производительность вашего ПК, разрешая DNS-запросы с локальным кешем, уменьшая задержки при просмотре или любой другой интернет-активности.</p>
 </div>
 <div class="paragraph">
-<p>Для установки и начальной настройки в Windows см. {acrylic-win10}[Руководство на веб-сайте] Acrylic. После установки вам необходимо настроить Acrylic для интеграции доменных зон Emercoin. Пример файла конфигурации {acrylic-conf-ex}[доступен в Интернете]. Для настройки вы должны перенаправить все запросы в зоны EmerDNS (.emc , .coin , .lib , .bazar) в локальный кошелек Emercoin, а все запросы в другие зоны - провайдеру DNS по умолчанию. Это можно настроить в файле конфигурации Acrylic следующим образом:</p>
+<p>Для установки и начальной настройки в Windows см. <a href="http://mayakron.altervista.org/support/acrylic/Windows10Configuration.htm">Руководство на веб-сайте</a> Acrylic. После установки вам необходимо настроить Acrylic для интеграции доменных зон Emercoin. Пример файла конфигурации <a href="http://mayakron.altervista.org/support/acrylic/Configuration.htm">доступен в Интернете</a>. Для настройки вы должны перенаправить все запросы в зоны EmerDNS (.emc , .coin , .lib , .bazar) в локальный кошелек Emercoin, а все запросы в другие зоны - провайдеру DNS по умолчанию. Это можно настроить в файле конфигурации Acrylic следующим образом:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1160,7 +1218,7 @@ zone "bazar" {
 <div class="sect4">
 <h5 id="_локальная_сеть_прокси_dnsmasq">Локальная сеть, прокси DNSMASQ</h5>
 <div class="paragraph">
-<p>Современные маршрутизаторы обычно содержат в своей прошивке встроенный прокси-DNS. Обычно это {dnsmasq}[DNSMASQ]. Некоторые прошивки маршрутизатора, такие как {dd-wrt}[DD-WRT] и {openwrt}[OpenWrt] (а также другие), позволяют настраивать встроенный DNS-прокси (например, см. {dd-wrt-dnsmasq}[Руководство DD-WRT DNSMASQ] или {openwrt-dnsmasq}[руководство OpenWrt DNSMASQ]).</p>
+<p>Современные маршрутизаторы обычно содержат в своей прошивке встроенный прокси-DNS. Обычно это <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">DNSMASQ</a>. Некоторые прошивки маршрутизатора, такие как <a href="https://www.dd-wrt.com/">DD-WRT</a> и <a href="https://www.openwrt.org/">OpenWrt</a> (а также другие), позволяют настраивать встроенный DNS-прокси (например, см. <a href="https://www.dd-wrt.com/wiki/index.php/DNSMasq_-_DNS_for_your_local_network_-_HOWTO">Руководство DD-WRT DNSMASQ</a> или <a href="https://oldwiki.archive.openwrt.org/doc/howto/dhcp.dnsmasq">руководство OpenWrt DNSMASQ</a>).</p>
 </div>
 <div class="paragraph">
 <p>В этом случае кошелек следует запускать на ПК со статическим IP-адресом в локальной сети, и DNSMASQ от маршрутизатора будет отправлять DNS-запросы на этот компьютер. Ниже приведены примеры строк конфигурации, которые необходимо добавить в dnsmasq.conf. В этом примере ПК, на котором запущен Emercoin, имеет IP-адрес в локальной сети 192.168.1.53.</p>
@@ -1189,7 +1247,7 @@ Name Server: SEED2.EMERCOIN.COM</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Вы можете проверить эту информацию с помощью {whois}[whois].</p>
+<p>Вы можете проверить эту информацию с помощью <a href="https://www.computerhope.com/unix/uwhois.htm">whois</a>.</p>
 </div>
 <div class="paragraph">
 <p>На каждом из этих серверов имен работает кошелек Emercoin с активным DNS-сервером, который обслуживает шлюз и локальную зону для emercoin.com. Специфические параметры конфигурации DNS для файла emercoin.conf следующие:</p>
@@ -1244,7 +1302,7 @@ www=A=192.241.241.153|TXT=Emercoin www-site</pre>
 <div class="sect3">
 <h4 id="_виртуальные_хосты_vhosts">2.1.6. Виртуальные хосты (vhosts)</h4>
 <div class="paragraph">
-<p>Когда вы запускаете {virtual-host}[виртуальные хосты], вам необходимо будет изменить конфигурацию вашего веб-сервера, чтобы правильно различать ваше имя хоста с таким количеством возможных суффиксов шлюза, которое вы хотите (или без суффикса, если имя разрешено LAN или локально). Это легко сделать, создав псевдоним vname со звездочкой "*" в качестве суффикса. В следующем примере показана соответствующая конфигурация {apache-web}[веб-сервера Apache] для виртуального сервера exchange.emc . Обратите внимание на строку ServerAlias:</p>
+<p>Когда вы запускаете <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%85%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3">виртуальные хосты</a>, вам необходимо будет изменить конфигурацию вашего веб-сервера, чтобы правильно различать ваше имя хоста с таким количеством возможных суффиксов шлюза, которое вы хотите (или без суффикса, если имя разрешено LAN или локально). Это легко сделать, создав псевдоним vname со звездочкой "*" в качестве суффикса. В следующем примере показана соответствующая конфигурация <a href="https://ru.wikipedia.org/wiki/Apache_HTTP_Server">веб-сервера Apache</a> для виртуального сервера exchange.emc . Обратите внимание на строку ServerAlias:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1287,7 +1345,7 @@ www=A=192.241.241.153|TXT=Emercoin www-site</pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>Скрипт генерации запроса CSR вы можете найти {postmet-csr-gen}[здесь].</p>
+<p>Скрипт генерации запроса CSR вы можете найти <a href="https://github.com/emercoin/emcssl/tree/master/PostmetSSL">здесь</a>.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1350,7 +1408,7 @@ www=A=192.241.241.153|TXT=Emercoin www-site</pre>
 Подробнее <a href="articles.html#emerssl-article">в этой статье</a></p>
 </div>
 <div class="paragraph">
-<p>Преимущество EmerSSL заключается в полной децентрализации системы, то есть в отсутствии группы серверов, работающих под одной авторизацией (как в системах {kerberos}[Kerberos], {openid}[OpenID], TeddyID и т.п.). Из-за этой децентрализации EmerSSL не может пострадать от сбоя общесистемного обслуживания либо из-за технического сбоя, либо из-за злонамеренной атаки на серверы авторизации. Кроме того, пользователь не может заблокировать свои учетные записи в глобальном масштабе по прихоти одного органа.</p>
+<p>Преимущество EmerSSL заключается в полной децентрализации системы, то есть в отсутствии группы серверов, работающих под одной авторизацией (как в системах <a href="https://ru.wikipedia.org/wiki/Kerberos">Kerberos</a>, <a href="https://ru.wikipedia.org/wiki/OpenID">OpenID</a>, TeddyID и т.п.). Из-за этой децентрализации EmerSSL не может пострадать от сбоя общесистемного обслуживания либо из-за технического сбоя, либо из-за злонамеренной атаки на серверы авторизации. Кроме того, пользователь не может заблокировать свои учетные записи в глобальном масштабе по прихоти одного органа.</p>
 </div>
 <div class="paragraph">
 <p>С технологией EmerSSL связана EmerSSL InfoCard - "визитная карточка" система, которая дополняет беспарольный вход в EmerSSL, позволяя автоматически заполнять профили веб-сайтов из данных, хранящихся в блокчейне Emercoin.</p>
@@ -1362,16 +1420,16 @@ www=A=192.241.241.153|TXT=Emercoin www-site</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>{emerssl-scripts}[Набор инструментов EmerSSL]</p>
+<p><a href="https://emerssl.emercoin.com/">Набор инструментов EmerSSL</a></p>
 </li>
 <li>
-<p>{emerssl-en-pdf}[Техническая документация на английском]</p>
+<p><a href="files/EMCSSL.pdf">Техническая документация на английском</a></p>
 </li>
 <li>
-<p>{emerssl-drupal}[Модуль EmerSSL и Infocard для Drupal]</p>
+<p><a href="https://www.drupal.org/project/emc_ssl">Модуль EmerSSL и Infocard для Drupal</a></p>
 </li>
 <li>
-<p>{emerssl-github}[EmerSSL на Github]</p>
+<p><a href="https://github.com/emercoin/emcssl">EmerSSL на Github</a></p>
 </li>
 </ul>
 </div>
@@ -1474,7 +1532,7 @@ www=A=192.241.241.153|TXT=Emercoin www-site</pre>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>{emerssl-scripts}[Загрузите] необходимые скрипты (или просмотрите <a href="https://github.com/emercoin/emcssl" class="bare">github.com/emercoin/emcssl</a> для последней версии для разработки).</p>
+<p><a href="https://emerssl.emercoin.com/">Загрузите</a> необходимые скрипты (или просмотрите <a href="https://github.com/emercoin/emcssl" class="bare">github.com/emercoin/emcssl</a> для последней версии для разработки).</p>
 </li>
 <li>
 <p>Переименуйте файл <strong>infocard_example.info</strong> в <strong>infocard_&lt;your_login_name&gt;.info</strong> и измените данные на свои собственные. Если вы предпочитаете не предоставлять данные для некоторых вещей, просто удалите строку. Примеры данных:</p>
@@ -1576,7 +1634,7 @@ To link your EmerSSL certificate to this info file, run ./gen_tpl.sh and use val
 <p>EmerSSH можно бесшовно связать с OpenSSH, получив гибкость в дополнение к безопасности.</p>
 </div>
 <div class="paragraph">
-<p>EmerSSH — система для управления PKI и {acl}[Access-Control List] (ACL) на базе блокчейна Emercoin.</p>
+<p>EmerSSH — система для управления PKI и <a href="https://en.wikipedia.org/wiki/Access_control_list">Access-Control List</a> (ACL) на базе блокчейна Emercoin.</p>
 </div>
 <div class="paragraph">
 <p>Если EmerSSH связать с Open SSH, вы получите удобный, безопасный и гибкий способ SSH-подключения ко многим серверам. Для этого в OpenSSH надо указать ссылку на утилиту “emcssh”, которая будет «общаться» с блокчейном и получать SSH-креды в процессе аутентификации.</p>
@@ -1592,13 +1650,13 @@ To link your EmerSSL certificate to this info file, run ./gen_tpl.sh and use val
 <p>Можно создать мост между OpenSSH и блокчейном криптовалюты Emercoin. Результатом является удобный, безопасный и очень гибкий способ входа на множество серверов с использованием протокола SSH.</p>
 </div>
 <div class="paragraph">
-<p>Простая программа {emerssh-app}[EmerSSH] обеспечивает мост между {openssh}[OpenSSH] и блокчейном Emercoin, обеспечивая безопасное децентрализованное управление PKI. Когда OpenSSH настроен для обращения к EmerSSH , программа будет запрашивать блокчейн Emercoin для получения учетных данных SSH во время процесса аутентификации.</p>
+<p>Простая программа <a href="https://github.com/emercoin/emcssh">EmerSSH</a> обеспечивает мост между <a href="https://ru.wikipedia.org/wiki/OpenSSH">OpenSSH</a> и блокчейном Emercoin, обеспечивая безопасное децентрализованное управление PKI. Когда OpenSSH настроен для обращения к EmerSSH , программа будет запрашивать блокчейн Emercoin для получения учетных данных SSH во время процесса аутентификации.</p>
 </div>
 <div class="paragraph">
 <p>Пользователи могут управлять своими собственными учетными данными (открытыми ключами), отправляя и изменяя записи в цепочке блоков EMC (с помощью стандартного графического интерфейса Emercoin или демона командной строки. Аналогичным образом администраторы могут управлять группами пользователей для своих служб, которые могут содержать ссылки на другие группы как а также отдельных пользователей, что позволяет создавать рекурсивные деревья аутентификации.</p>
 </div>
 <div class="paragraph">
-<p>EmerSSH работает под аббревиатурой SSH в Emercoin NVS. Записи считаются безопасными и неизменными из-за безопасности, {sec-princ-emc}[обеспечиваемой] блокчейном Emercoin.</p>
+<p>EmerSSH работает под аббревиатурой SSH в Emercoin NVS. Записи считаются безопасными и неизменными из-за безопасности, <a href="https://emercoin.com/ru/documentation/introduction/security-principles/">обеспечиваемой</a> блокчейном Emercoin.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -1984,7 +2042,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAgmzL............</pre>
 <p>Если сервер не запрашивает пароль, значит, все в порядке.</p>
 </div>
 <div class="paragraph">
-<p>Больше информации вы можете найти в статье: {emerssh-faq-en}[Что такое EmerSSH?] FAQ(Eng).</p>
+<p>Больше информации вы можете найти в статье: <a href="https://medium.com/@emer.tech/what-is-emerssh-faq-d38a6a0d073c">Что такое EmerSSH?</a> FAQ(Eng).</p>
 </div>
 </div>
 </div>
@@ -2035,10 +2093,10 @@ ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAgmzL............</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>{emerdpo-habr}[Как защитить] свою продукцию от подделки с помощью блокчейна.</p>
+<p><a href="https://habr.com/ru/articles/322696/">Как защитить</a> свою продукцию от подделки с помощью блокчейна.</p>
 </li>
 <li>
-<p>Узнайте о {emerdpo-snpublisher}[SN-Publisher], утилите для автоматизации вставки серийных номеров EmerDPO в блокчейн Emecoin</p>
+<p>Узнайте о <a href="https://emercoin.com/ru/documentation/blockchain-services/emerdpo/emerdpo-sn-publisher/">SN-Publisher</a>, утилите для автоматизации вставки серийных номеров EmerDPO в блокчейн Emecoin</p>
 </li>
 </ul>
 </div>
@@ -2061,7 +2119,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAgmzL............</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>{pstn}[PSTN]&#8201;&#8212;&#8201;Public Switched Telephone Network</p>
+<p><a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B5%D1%82%D1%8C_%D0%BE%D0%B1%D1%89%D0%B5%D0%B3%D0%BE_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F">PSTN</a>&#8201;&#8212;&#8201;Public Switched Telephone Network</p>
 </li>
 </ul>
 </div>
@@ -2109,7 +2167,7 @@ PBX Продавца<br>
 <div class="sect3">
 <h4 id="_enum">2.5.2. ENUM</h4>
 <div class="paragraph">
-<p>Протокол ENUM ({rfc6116}[rfc6116]) работает как распределённая адресная книга, и позволяет по номеру телефона «найти дорогу» к соответствующей IP ATC, которая обслуживает этот номер. Описание протокола: <a href="https://en.wikipedia.org/wiki/Telephone_number_mapping" class="bare">en.wikipedia.org/wiki/Telephone_number_mapping</a></p>
+<p>Протокол ENUM (<a href="https://www.rfc-editor.org/rfc/rfc6116">rfc6116</a>) работает как распределённая адресная книга, и позволяет по номеру телефона «найти дорогу» к соответствующей IP ATC, которая обслуживает этот номер. Описание протокола: <a href="https://en.wikipedia.org/wiki/Telephone_number_mapping" class="bare">en.wikipedia.org/wiki/Telephone_number_mapping</a></p>
 </div>
 <div class="paragraph">
 <p>Идея использования протокола состоит в следующем:</p>
@@ -2173,7 +2231,7 @@ PBX Продавца<br>
 А примерно за месяц до закрытия — e164.org вообще перестал отдавать ENUM-ответы, несмотря на то, что записи в нём содержались корректные (мы проверяли).</p>
 </li>
 <li>
-<p>Так как классическая централизованная ENUM-система пользуется транспортом DNS, она уязвима против всевозможных атак на инфраструктуру DNS, таких как {dns-spoofing}[DNS-Spoofing], {dns-hijacking}[DNS-hijacking], и им подобных. Естественно, сбои в DNS-системе также приводят к отказу в обслуживании и в системе ENUM.</p>
+<p>Так как классическая централизованная ENUM-система пользуется транспортом DNS, она уязвима против всевозможных атак на инфраструктуру DNS, таких как <a href="https://ru.wikipedia.org/wiki/DNS_spoofing">DNS-Spoofing</a>, <a href="https://ru.wikipedia.org/wiki/DNS_hijacking">DNS-hijacking</a>, и им подобных. Естественно, сбои в DNS-системе также приводят к отказу в обслуживании и в системе ENUM.</p>
 </li>
 <li>
 <p>Ну и последнее, но важное: Нагрузка на такой сервер получается весьма большой, ибо запрос делается при попытке каждого звонка с IP ATC. Да, запросы кэшируются промежуточными DNS-серверами, но тем не менее — нагрузка всё равно остаётся высокой для сервера, обслуживающего все телефонные станции всего мира. Как следствие — отказы в обслуживании или задержки с обработкой запросов, а также высокая цена серверной инфраструктуры.</p>
@@ -2222,7 +2280,7 @@ PBX Продавца<br>
 <p>В силу истинной децентрализации сети, доверие к сети не зависит от доверия к какой-либо одной компании. Невозможна ситуация, когда вся система будет остановлена по решению кого-либо одного [2]. Сеть ENUM будет продолжать работать, пока сотни независимых майнеров закрывают блоки и подтверждают консенсус блокчейна.</p>
 </li>
 <li>
-<p>Алгоритм обработки ENUM-запроса выполняется на стороне запрашивающего. Программный код, который это делает, доступен на {emc-github}[Github], и может быть проанализирован кем угодно на предмет корректности. Невозможна ситуация, когда ENUM-сервер меняет правила по ходу игры. То есть запрашивается собственный локальный сервер посредством локального соединения (или через доверенную сеть).</p>
+<p>Алгоритм обработки ENUM-запроса выполняется на стороне запрашивающего. Программный код, который это делает, доступен на <a href="https://github.com/emercoin">Github</a>, и может быть проанализирован кем угодно на предмет корректности. Невозможна ситуация, когда ENUM-сервер меняет правила по ходу игры. То есть запрашивается собственный локальный сервер посредством локального соединения (или через доверенную сеть).</p>
 </li>
 <li>
 <p>В силу децентрализованности пиринговой сети Emercoin, она масштабируется неограниченно. Следовательно, нет «узкого горла», в котором фокусируются запросы со всего мира. Каждый может поставить себе сколько угодно независимых узлов EmerCoin, и разрешать свои ENUM-запросы на этом кластере. То есть решена проблема [4].</p>
@@ -2347,7 +2405,7 @@ PBX Продавца<br>
 <p><strong>Value</strong></p>
 </div>
 <div class="paragraph">
-<p>Поле Value cостоит из нескольких строк. Строки — либо U-директивы NAPTR ({rfc3402}[rfc3402]) ENUM(начинаются с E2U), либо подписи верификаторов (начинаются с SIG). Одна ENUM-запись может иметь как несколько директив, так и несколько подписей от различных верификаторов. Пример value, включающий U-директирву и подпись:</p>
+<p>Поле Value cостоит из нескольких строк. Строки — либо U-директивы NAPTR (<a href="https://tools.ietf.org/html/rfc3402">rfc3402</a>) ENUM(начинаются с E2U), либо подписи верификаторов (начинаются с SIG). Одна ENUM-запись может иметь как несколько директив, так и несколько подписей от различных верификаторов. Пример value, включающий U-директирву и подпись:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2375,7 +2433,7 @@ Regex -&gt; !^(.*)$!sip:17772325555@in.callcentric.com!</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Смысл полей и их названия соответствуют {rfc5483}[стандартам] классического ENUM. Для тех, кому лень читать документацию, краткая инструкция для начинающих:</p>
+<p>Смысл полей и их названия соответствуют <a href="https://tools.ietf.org/html/rfc5483">стандартам</a> классического ENUM. Для тех, кому лень читать документацию, краткая инструкция для начинающих:</p>
 </div>
 <div class="paragraph">
 <p>Почти всегда сервис — это как в примере выше, E2U+sip для SIP IP ATC. Возможны другие варианты, например E2U+iax или что-либо подобное. Как упоминалось выше, в ENUM-записи может присутствовать несколько U-директив.</p>
@@ -2564,7 +2622,7 @@ enumtollfree=@enum:tollfree</pre>
 <p>Как это работает? Блокчейн хранит вечно любую информацию, верно? Вот мы и подумали, сколько бывало&#8201;&#8212;&#8201;ищещь какой-нибудь старый фильм, а его и след простыл, остались только левые копии с совсем не тем перводом и т.п. Так вот, магнет-ссылка в блокчейне никуда не денется и придет время, её обязательно найдут. (правда останутся ли копии того фильма на дисках энтузиастов, но это другой вопрос)</p>
 </div>
 <div class="paragraph">
-<p>EmcMAGNET - это хранилище {magnet-lnk-explain}[магнитных ссылок BitTorrent] под аббревиатурой сервиса «magnet» в Emercoin NVS.</p>
+<p>EmcMAGNET - это хранилище <a href="https://www.makeuseof.com/tag/bittorrent-magnets-work-technology-explained/">магнитных ссылок BitTorrent</a> под аббревиатурой сервиса «magnet» в Emercoin NVS.</p>
 </div>
 <div class="paragraph">
 <p>Магнитные ссылки должны использовать следующий формат имя&#8594; значение :</p>
@@ -2861,13 +2919,13 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 <div class="sect3">
 <h4 id="_как_этим_пользоваться">2.9.2. Как этим пользоваться</h4>
 <div class="paragraph">
-<p>Выше, в разделе “как это работает”, был предоставлен пошаговый алгоритм как генерации и публикации подписей, так и проверки файлов. Понятно, что вручную все эти операции делать сложно, особенно для конечного пользователя. Поэтому для практического применения мы написали программу fv.php, которую можно скачать из репозитория Emercoin {file-validator}[здесь].</p>
+<p>Выше, в разделе “как это работает”, был предоставлен пошаговый алгоритм как генерации и публикации подписей, так и проверки файлов. Понятно, что вручную все эти операции делать сложно, особенно для конечного пользователя. Поэтому для практического применения мы написали программу fv.php, которую можно скачать из репозитория Emercoin <a href="https://github.com/emercoin/FV">здесь</a>.</p>
 </div>
 <div class="paragraph">
 <p>Эта программа также является “референтной имплементацией” рассмотренных выше алгоритмов, и может быть использована в качестве практического примера для написания аналогичной программы или для интеграции системы <strong>FV</strong> в менеджеры пакетов или другие программы и сервисы.</p>
 </div>
 <div class="paragraph">
-<p>Программа изначально написана для Linux/FreeBSD, но может быть запущена и из командной строки Windows, например в соответствии с {file-validator-windows}[инструкцией].</p>
+<p>Программа изначально написана для Linux/FreeBSD, но может быть запущена и из командной строки Windows, например в соответствии с <a href="https://stackoverflow.com/questions/12870880/run-php-file-in-windows-command-prompt-cmd">инструкцией</a>.</p>
 </div>
 <div class="paragraph">
 <p>После скачивания, в программе необходимо отредактировать URL для подключения к локальному кошельку, установив там актуальные параметры username/password/port:</p>
@@ -2961,7 +3019,7 @@ SIG=olegarch|100|H32Bp3cLoqBFvlyUIIXLrKX3TD+IG2aX2dmegy4oIxGEWeKBw9YTITKWaFWM4Ud
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-29 19:51:56 +0300
+Last updated 2023-04-30 18:20:56 +0300
 </div>
 </div>
 </body>
