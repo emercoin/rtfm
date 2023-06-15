@@ -57,6 +57,7 @@ https://medium.com/@emer.rutech/новые-плагины-blockchain-dns-для-
 Эмеркоин сделал VoIP телефонию бесплатной с помощью ENUMER!::
 https://medium.com/@emer.rutech/эмеркоин-сделал-voip-телефонию-бесплатной-с-помощью-enumer-1e9e3f64187f
 
+[id=art_testnet_medium]
 Разворачиваем Emercoin testnet::
 https://medium.com/@emer.rutech/разворачиваем-emercoin-testnet-f31fa4243762
 
@@ -203,6 +204,7 @@ https://habr.com/ru/companies/hashflare/articles/402151/
 EMCSSL – Система идентификации пользователей WWW на основе подсистемы NVS криптовалюты EmerCoin и децентрализованных клиентских SSL-сертификатов::
 https://habr.com/ru/articles/257605/
 
+[id=art_testnet_habr]
 Разворачиваем Emercoin testnet и получаем много бесплатных монет::
 https://habr.com/ru/companies/emercoin/articles/335338/
 
