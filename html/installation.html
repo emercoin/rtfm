@@ -134,9 +134,11 @@ a {
 <p><span class="toc-root"><a href="index.html">Emercoin</a></span></p><ul class="sectlevel1">
 <li><a href="installation.html"><span class="toc-current">1. Installation</span></a>
 <ul class="sectlevel2">
-<li><a href="installation.html#_сборка_из_исходных_кодов">1.1. Сборка из исходных кодов</a>
+<li><a href="installation.html#_docker">1.1. Docker</a>
 </li>
-<li><a href="installation.html#_emercoin_conf">1.2. Emercoin.conf</a>
+<li><a href="installation.html#_сборка_из_исходных_кодов">1.2. Сборка из исходных кодов</a>
+</li>
+<li><a href="installation.html#_emercoin_conf">1.3. Emercoin.conf</a>
 </li>
 </ul>
 </li>
@@ -169,7 +171,35 @@ a {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_сборка_из_исходных_кодов">1.1. Сборка из исходных кодов</h3>
+<h3 id="_docker">1.1. Docker</h3>
+<div class="paragraph">
+<p>Существуют готовые образы Docker, запустив которые вы сразу получите готовую сборку Emercoin.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Официальный <a href="https://hub.docker.com/r/emercoin/core">репозиторий</a></p>
+</li>
+<li>
+<p>Неофициальный <a href="https://hub.docker.com/r/wg00/emercoin">репозиторий</a></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Образы в неофициальном репозитории скомплированы с версией BerkleyDB 5.3 поэтому wallet.dat от других версий не подхватиться
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_сборка_из_исходных_кодов">1.2. Сборка из исходных кодов</h3>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
@@ -201,7 +231,7 @@ make -j 4</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_emercoin_conf">1.2. Emercoin.conf</h3>
+<h3 id="_emercoin_conf">1.3. Emercoin.conf</h3>
 <div class="listingblock">
 <div class="title">Send commands to node running on &lt;ip&gt; (default: 127.0.0.1)</div>
 <div class="content">
@@ -354,7 +384,6 @@ make -j 4</pre>
 -printtoconsole
 -privdb
 -proxyrandomize
--prune
 -reindex
 -reindex-chainstate
 -relaypriority

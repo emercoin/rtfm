@@ -1040,8 +1040,11 @@ a {
 <div class="listingblock">
 <div class="title">emcdnslocal.conf</div>
 <div class="content">
-<pre>wg0.lib=A=5.255.97.202|AAAA=2a04:52c0:102:62d6::babe:cafe|MX=mail.wg0.lib
-mail.wg0.lib=A=5.255.97.202</pre>
+<pre>wg0.lib=A=5.255.97.202|AAAA=2a04:52c0:102:62d6::babe:cafe|MX=mail.wg0.lib|SD=mail,mx,_tcp
+mail.wg0.lib=A=5.255.97.202
+mx.wg0.lib=A=5.255.97.202
+_tcp.wg0.lib=SD=_imaps
+_imaps._tcp.wg0.lib=SRV=5:0:mail.wg0.lib:993</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1063,6 +1066,8 @@ emcdnslocalcf=./emcdnslocal.conf
 <pre>dig wg0.lib mx
 ...
 dig mail.wg0.lib A
+...
+dig _imaps._tcp.wg0.lib srv
 ...</pre>
 </div>
 </div>
