@@ -60,3 +60,5 @@
 :proof-of-stake: https://ru.wikipedia.org/wiki/Доказательство_доли_владения
 :utxo: https://en.wikipedia.org/wiki/Unspent_transaction_output
 :emer-stats: https://explorer.emercoin.com/stats
+:emer-docker-oficial: https://hub.docker.com/r/emercoin/core
+:emer-docker-unoficial: https://hub.docker.com/r/wg00/emercoin
